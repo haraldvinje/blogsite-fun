@@ -11,12 +11,12 @@ export const PostContent = ({post}: {post: Post}) => {
             : post.createdAt
 
     return (
-        <div className='bg-white py-8 px-4 rounded-md border-2 border-gray-400'>
+        <div className='bg-white py-8 px-8 rounded-md border-2 border-gray'>
             <h1 className='text-2xl font-bold pb-4'>{post?.title}</h1>
             <span>
                 Written by{' '}
                 <Link href={`/${post.username}`}>
-                    <a className="text-blue-600">@{post.username}</a>
+                    <a className="text-blue">@{post.username}</a>
                 </Link>{' '}
                 on {toDateTimeString(createdAt)}
             </span>

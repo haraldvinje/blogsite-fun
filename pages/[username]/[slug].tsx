@@ -4,6 +4,8 @@ import { isEmpty } from '../../lib/utils'
 import { getUserWithUsername, Post, postToJSON } from '../../lib/firebase/firestore'
 import { useDocumentData } from 'react-firebase-hooks/firestore'
 import { PostContent } from '../../components/PostComponents/PostContent'
+import AuthCheck from '../../components/AuthCheck'
+import { HeartButton } from '../../components/PostComponents/HeartButton'
 
 interface StaticProps {
     post: Post
@@ -55,15 +57,31 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const Post = ( {post, path}: StaticProps ) => {
 
-    const ref = doc(getFirestore(), path)
-    const [realtimePost] = useDocumentData(ref)
+    const postRef = doc(getFirestore(), path)
+    const [realtimePost] = useDocumentData(postRef)
 
     const postToShow = realtimePost as Post || post
 
     return (
-        <main>
-            <section>
+        <main className='flex flex-wrap'>
+            <section className='w-[80%] mr-4 mb-4'>
                 <PostContent post={postToShow} />
+            </section>
+            <section 
+                className='bg-white border-2 border-gray rounded-md
+                    flex flex-col grow max-w-[80%] h-48 items-center justify-center'
+                >
+                <p>{postToShow.heartCount}💙</p>
+                <AuthCheck
+                    fallback={
+                        <div>
+                            <a href="/enter" className='text-blue hover:underline' target="_blank">Sign in</a>
+                            &nbsp;to 💙
+                        </div>
+                    }
+                >
+                    <HeartButton postRef={postRef} />
+                </AuthCheck>
             </section>
         </main>
     )

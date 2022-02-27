@@ -12,7 +12,7 @@ const Custom404 = () => {
                 frameBorder="0"
                 allowFullScreen
             ></iframe>
-            <Link href="/">
+            <Link href="/" passHref>
                 <button className='bg-blue-800 my-4 py-4 px-10 
                     text-white text-[10px] font-extrabold rounded-md'
                 >

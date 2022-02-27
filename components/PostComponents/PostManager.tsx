@@ -27,7 +27,7 @@ export const PostManager = () => {
                 <div className='flex'>
                     <section className='w-[70%] h-full'>
                         <PostForm
-                            postRef={postRef}
+                            originalPostRef={postRef}
                             postsCollectionRef={collectionRef}
                             originalPostValues={post as Post}
                             preview={preview} />
@@ -36,7 +36,7 @@ export const PostManager = () => {
                         <div className='flex flex-col justify-center items-center w-full'>
                             <h3 className='text-[20px] font-semibold'>Tools</h3>
                             <button onClick={() => setPreview(!preview)}
-                                className='bg-gray-400 w-[80%] h-[50px] rounded-md'
+                                className='bg-gray hover:bg-dark-gray w-[80%] h-[50px] rounded-md'
                             >
                                 {preview ? 'Edit' : 'Preview'}
                             </button>

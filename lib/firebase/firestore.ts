@@ -1,5 +1,4 @@
-import { collection, where, getDocs, query, limit, Timestamp, DocumentSnapshot, QueryDocumentSnapshot, DocumentData } from 'firebase/firestore'
-import { firestore } from './firebase'
+import { collection, where, getDocs, query, limit, Timestamp, DocumentSnapshot, QueryDocumentSnapshot, DocumentData, getFirestore } from 'firebase/firestore'
 
 export interface User {
     username: string
@@ -27,7 +26,7 @@ export interface Post {
 export async function getUserWithUsername(
     username: string
 ): Promise<QueryDocumentSnapshot<DocumentData>> {
-    const q = query(collection(firestore, 'users'), where('username', '==', username), limit(1))
+    const q = query(collection(getFirestore(), 'users'), where('username', '==', username), limit(1))
     const userDoc = ((await getDocs(q)).docs)[0]
     return userDoc
 }

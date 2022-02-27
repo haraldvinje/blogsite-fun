@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { NextPage } from 'next'
 import React, { useContext, useCallback, useEffect, useState } from 'react'
 import { getFirestore, doc, getDoc, writeBatch } from 'firebase/firestore'
 import debounce from 'lodash.debounce'
 import { authSignOut, googleSignInWithPopup } from '../lib/firebase/auth'
+import { User } from 'firebase/auth'
 import { UserContext } from '../lib/context'
 
-const EnterPage: NextPage = () => {
+const EnterPage = () => {
     const { user, username } = useContext(UserContext)
     return (
         <main>
@@ -32,7 +32,7 @@ function SignInButton() {
                 text-sm font-bold"
             onClick={googleSignInWithPopup}
         >
-            <img className="h-2/3 mr-2" src={'/google.png'} /> Sign in with
+            <img className="h-2/3 mr-2" src='/google.png' alt="Logo"/> Sign in with
             Google
         </button>
     )
@@ -41,7 +41,7 @@ function SignInButton() {
 function SignOutButton() {
     return (
         <button
-            className="py-2 px-8 bg-gray-400 rounded-md hover:bg-slate-500 text-white"
+            className="py-2 px-8 bg-gray rounded-md hover:bg-dark-gray text-white"
             onClick={() => authSignOut()}
         >
             Sign Out
@@ -92,7 +92,7 @@ function UsernameForm() {
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        const userDoc = doc(getFirestore(), 'users', user.uid)
+        const userDoc = doc(getFirestore(), 'users', (user as User).uid)
         const usernameDoc = doc(getFirestore(), `usernames/${formValue}`)
 
         const batch = writeBatch(getFirestore())
@@ -101,7 +101,7 @@ function UsernameForm() {
             photoURL: user.photoURL,
             displayName: user.displayName
         })
-        batch.set(usernameDoc, { uid: user.uid })
+        batch.set(usernameDoc, { uid: (user as User).uid })
 
         await batch.commit()
     }
@@ -128,8 +128,8 @@ function UsernameForm() {
                     <button
                         type="submit"
                         disabled={!isValid}
-                        className="block bg-green-500 px-6 py-3 
-                        rounded-md text-white font-bold disabled:bg-slate-500
+                        className="block bg-light-green px-6 py-3 
+                        rounded-md text-white font-bold disabled:bg-dark-green
                         disabled:text-gray-400"
                     >
                         Choose
@@ -146,13 +146,13 @@ function UsernameMessage({username, isValid, loading}: { username: string; isVal
         return <p className={`${commonClass}`}>Checking...</p>
     } else if (isValid) {
         return (
-            <p className={`${commonClass} text-green-400`}>
+            <p className={`${commonClass} text-green`}>
                 {username} is available
             </p>
         )
     } else if (username && !isValid) {
         return (
-            <p className={`${commonClass} text-red-400`}>
+            <p className={`${commonClass} text-red`}>
                 {username} is not available
             </p>
         )

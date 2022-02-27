@@ -1,15 +1,12 @@
-import { User as FbUser } from 'firebase/auth'
 import { Timestamp } from 'firebase/firestore'
-import { User } from './firebase/firebase'
+import { User } from './firebase/firestore'
 
-export const isValidImageUrl = (url?: string): boolean => url.match(/\.(jpeg|jpg|gif|png)$/) !== null
+export const isValidImageUrl = (url?: string): boolean => url && url.match(/\.(jpeg|jpg|gif|png)$/) !== null
 
-export const getAvatarImageUrl = (user: User | FbUser): string => {
-    if (!user) return ""
-    return isValidImageUrl(user?.photoURL) ? user?.photoURL : "/hacker.png"
-}
+export const getAvatarImageUrl = (user: User): string => 
+    user && isValidImageUrl(user?.photoURL) ? user?.photoURL : "/hacker.png"
 
-const addZeroPadding = (num: number): string => num > 9 ? num.toString() : "0" + num.toString()
+const addZeroPadding = (num: number): string => `${num > 9 ? num : `0${num}`}`
 
 export const toDateTimeString = (dateTime: Timestamp | Date) => {
     let time: Timestamp | Date

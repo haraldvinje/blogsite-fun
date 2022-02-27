@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next'
 import { getFirestore, collectionGroup, getDocs, Timestamp, query, where, orderBy, limit, startAfter } from 'firebase/firestore'
 import { postToJSON, Post } from '../lib/firebase/firestore'
 import { PostFeed } from '../components/PostComponents/PostFeed'
-import Loader from '../components/Loader'
+import { Loader } from '../components/Loader'
 
 const LIMIT = 5
 
@@ -64,17 +64,21 @@ const Home = ({ posts }: { posts: Post[] }) => {
     }
 
     return (
-        <div className="flex justify-center items-center pt-16">
-            <div className="flex-col w-[100%]">
+        <div className="flex pt-16">
+            <div className="flex-col justify-center w-[100%]">
                 <PostFeed posts={posts} admin={false} />
-
-                {!loading && !postsEnd && (
-                    <button onClick={getMorePosts}>Load More</button>
-                )}
-
-                <Loader show={loading} />
-
-                {postsEnd && 'You have reached the end'}
+                <div className='text-center mt-4'>
+                    {!loading && !postsEnd && (
+                        <button 
+                            className='py-2 px-4 bg-blue text-white rounded-md hover:bg-gray-600'
+                            onClick={getMorePosts}
+                        >
+                            Load More
+                        </button>
+                    )}
+                    <Loader show={loading} />
+                    {postsEnd && 'You have reached the end'}
+                </div>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { User } from '../lib/firebase/firebase'
+import { User } from '../lib/firebase/firestore'
 import { getAvatarImageUrl } from '../lib/utils'
 
 const UserProfile = ({ user }: { user: User }) => {
@@ -9,6 +9,7 @@ const UserProfile = ({ user }: { user: User }) => {
                 <img
                     src={getAvatarImageUrl(user)}
                     className="rounded-full h-[200px] w-auto"
+                    alt="Img"
                 />
             </div>
             <div className="flex justify-center">

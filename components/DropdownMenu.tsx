@@ -1,7 +1,6 @@
-import React, { useRef, useState, ReactNode } from 'react'
-import FadeIn from 'react-fade-in'
-
-import { useOutsideClick } from '../lib/hooks'
+import React, { ReactNode, Fragment, Children } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import { ReactElement } from 'react-markdown/lib/react-markdown'
 
 interface Props {
     head: ReactNode
@@ -9,32 +8,40 @@ interface Props {
     className?: string
 }
 
-export const DropdownMenu = ({ head, children, className }: Props) => {
-    const [show, setShow] = useState(false)
-    const wrapperRef = useRef(null)
-    useOutsideClick(wrapperRef, () => setShow(false))
+export const DropdownMenu = ({ head, children }: Props) => {
 
-    const toggle = () => {
-        setShow(!show)
-    }
+    const childrenArray = Children.toArray(children)
 
     return (
-        <div ref={wrapperRef}>
-            <button onClick={toggle}>
-                {head}
-            </button>
-            {show ? (
-                <FadeIn transitionDuration={200}>
-                    <div onClick={() => setShow(false)}
-                        className={`absolute min-w-min z-50 my-4 text-base list-none bg-white rounded divide-y
-                            divide-gray-100 shadow-lg dark:bg-gray-700 dark:divide-gray-600 ${className}`}
-                    >
-                        {children}
-                    </div>
-                </FadeIn>
-            ) : (
-                <></>
-            )}
-        </div>
+        <Menu as="div" className="relative inline-block text-left">
+            <div>
+                <Menu.Button>
+                    {head}
+                </Menu.Button>
+            </div>
+
+            <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+            >
+                <Menu.Items className="origin-top-right border-2 border-gray absolute right-0 mt-2 w-42 
+                    rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                >   
+                    {Children.map(childrenArray, (child: ReactElement) => {
+                        return (
+                            <Menu.Item>
+                                <div className='text-gray-700 block px-4 py-2 text-sm'>
+                                    {child}
+                                </div>
+                            </Menu.Item>
+                    )})}
+                </Menu.Items>
+            </Transition>
+        </Menu>
     )
 }

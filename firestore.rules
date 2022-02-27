@@ -53,12 +53,11 @@ service cloud.firestore {
       
       function canCreatePost(userId) {
         let isOwner = request.auth.uid == userId;
-        let isNow = request.time == request.resource.data.createdAt;
         let isValidContent = request.resource.data.content.size() < 20000 && request.resource.data.heartCount == 0;
         let username = get(/databases/$(database)/documents/users/$(request.auth.uid)).data.username;
         let usernameMatches = username == request.resource.data.username;
 
-      	return isOwner && isNow && isValidContent && usernameMatches;
+      	return isOwner && isValidContent && usernameMatches;
       }
       
       function canUpdatePost(userId) {

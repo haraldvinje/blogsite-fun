@@ -1,9 +1,9 @@
 import { createContext } from 'react'
-import { User as FbUser } from 'firebase/auth'
-import { User } from './firebase/firebase'
+import { User } from 'firebase/auth'
+import { User as FsUser } from './firebase/firestore'
 
 interface UserContext {
-    user: User | FbUser | null
+    user: FsUser | User | null
     username: string | null
 }
 

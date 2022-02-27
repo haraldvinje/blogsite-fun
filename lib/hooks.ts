@@ -1,6 +1,6 @@
 import { doc, onSnapshot, getFirestore } from 'firebase/firestore'
 import { Unsubscribe, User } from 'firebase/auth'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from './firebase/firebase'
 
@@ -24,21 +24,4 @@ export function useUserData(): { user: User | null; username: string | null } {
     }, [user])
 
     return { user, username }
-}
-
-export function useOutsideClick(
-    ref: React.MutableRefObject<HTMLElement>,
-    handler: () => void
-) {
-    useEffect(() => {
-        function handleClickOutside(event) {
-            if (ref.current && !ref.current.contains(event.target)) {
-                handler()
-            }
-        }
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside)
-        }
-    }, [ref, handler])
 }

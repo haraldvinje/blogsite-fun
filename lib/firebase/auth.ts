@@ -1,11 +1,10 @@
-import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth'
-import { auth } from './firebase'
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from 'firebase/auth'
 
 export const googleAuthProvider = new GoogleAuthProvider()
 export const googleSignInWithPopup = async () => {
-    signInWithPopup(auth, googleAuthProvider).catch((error) => {
+    await signInWithPopup(getAuth(), googleAuthProvider).catch((error) => {
         error
     })
 }
 
-export const authSignOut = async () => signOut(auth)
+export const authSignOut = async () => signOut(getAuth())
