@@ -1,16 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { collectionGroup, getFirestore, doc, getDocs, query, limit, getDoc } from 'firebase/firestore'
+import { collectionGroup, getFirestore, doc, getDocs, query, limit, where, collection } from 'firebase/firestore'
 import { isEmpty } from '../../lib/utils'
 import { getUserWithUsername, Post, postToJSON } from '../../lib/firebase/firestore'
 import { useDocumentData } from 'react-firebase-hooks/firestore'
 import { PostContent } from '../../components/PostComponents/PostContent'
 import AuthCheck from '../../components/AuthCheck'
 import { HeartButton } from '../../components/PostComponents/HeartButton'
-
-interface StaticProps {
-    post: Post
-    path: string
-}
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { username, slug } = params as { username: string; slug: string }
@@ -21,10 +16,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     let success = false
 
     if (userDoc) {
-        const postRef = doc(getFirestore(), userDoc.ref.path, 'posts', slug)
-        path = postRef.path
+        const postsRef = collection(getFirestore(), userDoc.ref.path, 'posts')
+        const postQuery = query(
+            postsRef,
+            where('slug', '==', slug)
+        )
         try {
-            post = postToJSON(await getDoc(postRef))
+            post = (await getDocs(postQuery)).docs.map(postToJSON)[0]
+            path = `${username}/${post.slug}`
             success = !isEmpty(post)
         } catch (error) {
             success = false
@@ -55,21 +54,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
 }
 
-const Post = ( {post, path}: StaticProps ) => {
+const Post = ( {post}: { post: Post }) => {
 
-    const postRef = doc(getFirestore(), path)
+    const postRef = doc(getFirestore(), 'users', post.uid, 'posts', post.docId)
     const [realtimePost] = useDocumentData(postRef)
 
     const postToShow = realtimePost as Post || post
 
     return (
         <main className='flex flex-wrap'>
-            <section className='w-[80%] mr-4 mb-4'>
+            <section className='w-[80%] mr-2 mb-4'>
                 <PostContent post={postToShow} />
             </section>
             <section 
-                className='bg-white border-2 border-gray rounded-md
-                    flex flex-col grow max-w-[80%] h-48 items-center justify-center'
+                className='
+                    flex flex-col grow max-w-[40%] h-48 items-center justify-center'
                 >
                 <p>{postToShow.heartCount}💙</p>
                 <AuthCheck

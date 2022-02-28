@@ -7,14 +7,15 @@ export interface User {
 }
 
 export interface Post {
+    docId: string | null
     content: string
-    createdAt: Timestamp
+    createdAt: Timestamp | number
     heartCount: number
     published: boolean
     slug: string
     title: string
     uid: string
-    updatedAt: Timestamp
+    updatedAt: Timestamp | number
     username: string
     hearts: number
 }
@@ -36,12 +37,13 @@ export async function getUserWithUsername(
  * @param  {DocumentSnapshot} doc
  */
 export function postToJSON(doc: DocumentSnapshot) {
-    const data = doc.data()
-    if (!data) return {}
+    const data = doc.data() as Post
+    if (!data) return null
     return {
         ...data,
-        createdAt: data?.createdAt.toMillis() || 0,
-        updatedAt: data?.updatedAt.toMillis() || 0
+        docId: doc.id,
+        createdAt: (data?.createdAt as Timestamp).toMillis() || 0,
+        updatedAt: (data?.updatedAt as Timestamp).toMillis() || 0
     }
 }
 

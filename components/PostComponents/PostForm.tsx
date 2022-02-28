@@ -1,9 +1,7 @@
-import { doc, getFirestore, writeBatch, updateDoc, DocumentReference, DocumentData, CollectionReference, serverTimestamp } from 'firebase/firestore'
-import { useState } from 'react'
+import { updateDoc, DocumentReference, DocumentData, serverTimestamp } from 'firebase/firestore'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import kebabCase from 'lodash.kebabcase'
-import { auth } from '../../lib/firebase/firebase'
 import { Post } from '../../lib/firebase/firestore'
 import { PostContent } from './PostContent'
 import { ImageUploader } from './ImageUploader'
@@ -15,11 +13,10 @@ type FormInputs = {
 }
 
 export const PostForm = (
-    { originalPostValues, originalPostRef, preview }:
+    { postRef, originalPostValues, preview }:
         {
-            originalPostRef: DocumentReference<DocumentData>;
-            postsCollectionRef: CollectionReference;
-            originalPostValues: Post;
+            postRef: DocumentReference<DocumentData>
+            originalPostValues: Post
             preview: boolean
         }
 ) => {
@@ -28,24 +25,10 @@ export const PostForm = (
     })
     const { errors } = formState
     const slug = kebabCase(watch('title'))
-    const [postRef, setPostRef] = useState(originalPostRef)
 
     const updatePost = async ({ title, content, published }) => {
         const data = { title, content, published, slug: slug, updatedAt: serverTimestamp() }
-        const uid = auth.currentUser.uid
-        if (slug !== postRef.id) {
-            const docToCreateRef = doc(getFirestore(), 'users', uid, 'posts', slug)
-            const docToDeleteRef = doc(getFirestore(), 'users', uid, 'posts', postRef.id)
-
-            const batch = writeBatch(getFirestore())
-            batch.set(docToCreateRef, { ...originalPostValues, ...data })
-            batch.delete(docToDeleteRef)
-            await batch.commit()
-
-            setPostRef(doc(getFirestore(), 'users', auth.currentUser.uid, 'posts', slug as string))
-        } else {
-            await updateDoc(postRef, data)
-        }
+        await updateDoc(postRef, data)
         reset({ content, published })
         toast.success("Updated successfully!")
     }

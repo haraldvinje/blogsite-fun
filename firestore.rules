@@ -18,7 +18,6 @@ service cloud.firestore {
         allow create: if isValidUsername(username);
       }
 
-      
       match /users/{userId}/posts/{postId} {
       	allow read;
         allow create: if canCreatePost(userId); 
@@ -79,7 +78,6 @@ service cloud.firestore {
 				
         let heartDocAdded= !heartDocExists && heartDocExistsAfter;
         let heartDocRemoved = heartDocExists && !heartDocExistsAfter;
-
         
         let countChange = request.resource.data.heartCount - resource.data.heartCount;
         let validChange = countChange == 1 || countChange == -1;

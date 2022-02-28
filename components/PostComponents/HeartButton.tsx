@@ -32,7 +32,7 @@ export const HeartButton = ({ postRef }: { postRef: DocumentReference }) => {
         await batch.commit()
     }
 
-    const style = "bg-gray hover:bg-dark-gray border-2 border-black px-8 py-4 rounded-md"
+    const style = "bg-gray hover:bg-dark-gray border-2 border-black px-2 py-2 rounded-md"
 
     return heartDoc?.exists() ? (
         <button className={style} onClick={removeHeart}>💔 Unheart</button>

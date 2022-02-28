@@ -1,10 +1,4 @@
 import { Timestamp } from 'firebase/firestore'
-import { User } from './firebase/firestore'
-
-export const isValidImageUrl = (url?: string): boolean => url && url.match(/\.(jpeg|jpg|gif|png)$/) !== null
-
-export const getAvatarImageUrl = (user: User): string => 
-    user && isValidImageUrl(user?.photoURL) ? user?.photoURL : "/hacker.png"
 
 const addZeroPadding = (num: number): string => `${num > 9 ? num : `0${num}`}`
 

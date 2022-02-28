@@ -2,10 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useContext } from 'react'
-import { getAvatarImageUrl } from '../lib/utils'
 import { UserContext } from '../lib/context'
 import { authSignOut } from '../lib/firebase/auth'
-import { User as FsUser } from '../lib/firebase/firestore'
 import { User } from 'firebase/auth'
 
 import { DropdownMenu } from './DropdownMenu'
@@ -41,7 +39,7 @@ const Navbar = () => {
                                 <DropdownMenu
                                     head={
                                         <img
-                                            src={getAvatarImageUrl(user as FsUser)}
+                                            src={user?.photoURL || '/hacker.png'}
                                             className="h-[50px] w-[50px] rounded-full"
                                             alt="Pic"
                                         />

@@ -1,13 +1,12 @@
 import React from 'react'
 import { User } from '../lib/firebase/firestore'
-import { getAvatarImageUrl } from '../lib/utils'
 
 const UserProfile = ({ user }: { user: User }) => {
     return (
         <>
             <div className="flex justify-center">
                 <img
-                    src={getAvatarImageUrl(user)}
+                    src={user?.photoURL || '/hacker.png'}
                     className="rounded-full h-[200px] w-auto"
                     alt="Img"
                 />

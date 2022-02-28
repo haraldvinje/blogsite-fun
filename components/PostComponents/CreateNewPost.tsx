@@ -4,6 +4,7 @@ import { useContext, useState } from "react"
 import { useRouter } from "next/router"
 import kebabCase from 'lodash.kebabcase'
 import { toast } from 'react-hot-toast'
+import { v4 as uuidv4 } from 'uuid';
 import { UserContext } from "../../lib/context"
 import { FormEvent } from "react"
 
@@ -17,7 +18,7 @@ export const CreateNewPost = () => {
     const createPost = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const uid = getAuth().currentUser.uid
-        const ref = doc(getFirestore(), 'users', uid, 'posts', slug)
+        const ref = doc(getFirestore(), 'users', uid, 'posts', uuidv4())
         const data = {
             title,
             slug,
