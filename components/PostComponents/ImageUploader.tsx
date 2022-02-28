@@ -20,32 +20,34 @@ export const ImageUploader = () => {
         task.on(STATE_CHANGED, (snapshot) => {
             const pct = ((snapshot.bytesTransferred / snapshot.totalBytes) * 100).toFixed(0);
             setProgress(pct);
-
             task
-                .then((d) => getDownloadURL(fileRef))
+                .then(() => getDownloadURL(fileRef))
                 .then((url) => {
                     setDownloadURL(url)
                     setUploading(false)
                 })
         });
+    }
 
+    const copyToClipBoard = (url: string) => {
+        navigator.clipboard.writeText(url)
     }
 
     return (
         <div className="my-6 flex">
-            <Loader show={uploading}/>
+            <Loader show={uploading} />
             {uploading && <h3>{progress}%</h3>}
 
             {!uploading && (
                 <>
-                    <label 
+                    <label
                         className="bg-gray hover:bg-dark-gray text-center text-ellipsis 
                             overflow-hidden px-4 py-4 max-h-16 mr-8 font-bold cursor-pointer rounded-md"
                     >
                         📸 Upload Img
                         <input
                             className="hidden"
-                            type="file" 
+                            type="file"
                             onChange={uploadFile}
                             accept="image/x-png,image/gif,image/jpeg"
                         />
@@ -53,10 +55,15 @@ export const ImageUploader = () => {
                 </>
             )}
 
-            {downloadURL && ( 
-                <div className="flex flex-col w-[70%]">
-                    <code className="bg-white px-2 py-2 break-all w-full">{`![alt](${downloadURL})`}</code>
-                    <p>Copy and paste this link!</p>
+            {downloadURL && (
+                <div className="flex flex-col">
+                    <button
+                        type="button"
+                        onClick={() => copyToClipBoard(`![alt](${downloadURL})`)}
+                        className='bg-gray hover:bg-dark-gray rounded-md px-4 py-4 font-bold'
+                    >
+                        Copy Img URL
+                    </button>
                 </div>
             )}
 

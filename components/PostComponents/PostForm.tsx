@@ -55,9 +55,7 @@ export const PostForm = (
             )}
 
             <div className={`${preview ? "hidden" : ""} min-h-full`}>
-
                 <ImageUploader />
-
                 <textarea
                     className='w-full h-[38rem] px-2 border-2 border-gray'
                     {...register('content', {
@@ -67,20 +65,20 @@ export const PostForm = (
                     })}
                 >
                 </textarea>
-                {errors.title && <p className='text-red font-bold'>{errors.title.message}</p>}
-                {errors.content && <p className='text-red font-bold'>{errors.content.message}</p>}
-                <fieldset>
-                    <input className='my-4' name='published' type='checkbox' {...register('published')} />
-                    <label>Published</label>
-                </fieldset>
-
-                <button type="submit"
-                    className='w-full py-2 px-2 rounded-md text-center 
-                        bg-light-green hover:bg-green text-white'
-                >
-                    Save Changes
-                </button>
             </div>
+            {errors.title && <p className='text-red font-bold'>{errors.title.message}</p>}
+            {errors.content && <p className='text-red font-bold'>{errors.content.message}</p>}
+            <fieldset>
+                <input className='my-4' name='published' type='checkbox' {...register('published')} />
+                <label>Published</label>
+            </fieldset>
+
+            <button type="submit"
+                className='w-full py-2 px-2 rounded-md text-center 
+                    bg-light-green hover:bg-green text-white'
+            >
+                Save Changes
+            </button>
         </form>
     )
 }

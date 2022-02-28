@@ -15,7 +15,7 @@ export const PostManager = () => {
     useEffect(() => {
         if (!router.isReady) return
         const { slug } = router.query
-        const fetchPost = async () => {
+        const fetchAndSetPost = async () => {
             const uid = getAuth().currentUser.uid
             const postsRef = collection(getFirestore(), 'users', uid, 'posts')
             const postsQuery = query(
@@ -27,7 +27,7 @@ export const PostManager = () => {
             setPostRef(doc(getFirestore(), 'users', uid, 'posts', post.docId))
         }
         if (slug !== undefined) {
-            fetchPost()
+            fetchAndSetPost()
         }
     }, [router.isReady, router.query])
 
