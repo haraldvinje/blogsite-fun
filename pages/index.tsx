@@ -26,7 +26,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
 const Home = ({ posts }: { posts: Post[] }) => {
     const [visiblePosts, setVisiblePosts] = useState<Post[]>(posts)
     const [loading, setLoading] = useState(false)
-
     const [postsEnd, setPostsEnd] = useState(false)
 
     const getMorePosts = async () => {
@@ -66,10 +65,10 @@ const Home = ({ posts }: { posts: Post[] }) => {
     return (
         <div className="flex pt-16">
             <div className="flex-col justify-center w-[100%]">
-                <PostFeed posts={posts} admin={false} />
+                <PostFeed posts={visiblePosts} admin={false} />
                 <div className='text-center mt-4'>
                     {!loading && !postsEnd && (
-                        <button 
+                        <button
                             className='py-2 px-4 bg-blue text-white rounded-md hover:bg-gray-600'
                             onClick={getMorePosts}
                         >
