@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 import { User } from 'firebase/auth'
-import { User as FsUser } from './firebase/firestore'
+import { User as FsUser } from 'lib/firebase/firestore'
 
 interface UserContext {
     user: FsUser | User | null

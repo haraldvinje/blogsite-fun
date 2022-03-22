@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import { Post } from '../../lib/firebase/firestore'
-import { toDateTimeString } from '../../lib/utils'
+import { Post } from 'lib/firebase/firestore'
+import { toDateTimeString } from 'lib/utils'
 
 export const PostContent = ({post}: {post: Post}) => {
     const createdAt =

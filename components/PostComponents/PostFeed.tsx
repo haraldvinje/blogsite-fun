@@ -1,6 +1,6 @@
 import React from 'react'
-import { Post } from '../../lib/firebase/firestore'
-import { PostItem } from './PostItem'
+import { Post } from 'lib/firebase/firestore'
+import { PostItem } from 'components/PostComponents/PostItem'
 
 export const PostFeed = ({ posts, admin }: { posts: Post[]; admin: boolean }) => {
     return (

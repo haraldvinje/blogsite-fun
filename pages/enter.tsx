@@ -2,9 +2,9 @@
 import React, { useContext, useCallback, useEffect, useState } from 'react'
 import { getFirestore, doc, getDoc, writeBatch } from 'firebase/firestore'
 import debounce from 'lodash.debounce'
-import { authSignOut, googleSignInWithPopup } from '../lib/firebase/auth'
+import { authSignOut, googleSignInWithPopup } from 'lib/firebase/auth'
 import { User } from 'firebase/auth'
-import { UserContext } from '../lib/context'
+import { UserContext } from 'lib/context'
 
 const EnterPage = () => {
     const { user, username } = useContext(UserContext)

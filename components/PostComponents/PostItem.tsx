@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Post } from '../../lib/firebase/firestore'
+import { Post } from 'lib/firebase/firestore'
 
 export const PostItem = ({ post, admin = false }: { post: Post; admin: boolean }) => {
     const wordCount = post?.content.trim().split(/\s+/g).length

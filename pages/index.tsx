@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { GetServerSideProps } from 'next'
 import { getFirestore, collectionGroup, getDocs, Timestamp, query, where, orderBy, limit, startAfter } from 'firebase/firestore'
-import { postToJSON, Post } from '../lib/firebase/firestore'
-import { PostFeed } from '../components/PostComponents/PostFeed'
-import { Loader } from '../components/Loader'
+import { postToJSON, Post } from 'lib/firebase/firestore'
+import { PostFeed } from 'components/PostComponents/PostFeed'
+import { Loader } from 'components/Loader'
 
 const LIMIT = 5
 

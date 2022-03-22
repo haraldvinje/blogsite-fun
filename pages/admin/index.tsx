@@ -1,6 +1,6 @@
-import AuthCheck from "../../components/AuthCheck"
-import { CreateNewPost } from "../../components/PostComponents/CreateNewPost"
-import { PostList } from "../../components/PostComponents/PostList"
+import AuthCheck from "components/AuthCheck"
+import { CreateNewPost } from "components/PostComponents/CreateNewPost"
+import { PostList } from "components/PostComponents/PostList"
 
 const AdminPostsPage = () => {
     return (

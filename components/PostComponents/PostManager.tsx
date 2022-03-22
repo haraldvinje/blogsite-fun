@@ -2,8 +2,8 @@ import { doc, getFirestore, DocumentData, getDocs, query, where, DocumentReferen
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { getAuth } from 'firebase/auth'
-import { Post, postToJSON } from '../../lib/firebase/firestore'
-import { PostForm } from './PostForm'
+import { Post, postToJSON } from 'lib/firebase/firestore'
+import { PostForm } from 'components/PostComponents/PostForm'
 
 
 export const PostManager = () => {

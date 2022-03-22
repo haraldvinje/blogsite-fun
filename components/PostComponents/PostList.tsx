@@ -2,8 +2,8 @@ import React from 'react'
 import { collection,  query, orderBy, getFirestore } from "firebase/firestore"
 import { getAuth } from "firebase/auth"
 import { useCollection } from "react-firebase-hooks/firestore"
-import { Post } from "../../lib/firebase/firestore"
-import { PostFeed } from "../../components/PostComponents/PostFeed"
+import { Post } from "lib/firebase/firestore"
+import { PostFeed } from "components/PostComponents/PostFeed"
 
 export const PostList = () => {
 

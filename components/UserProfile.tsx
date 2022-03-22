@@ -1,5 +1,5 @@
 import React from 'react'
-import { User } from '../lib/firebase/firestore'
+import { User } from 'lib/firebase/firestore'
 
 const UserProfile = ({ user }: { user: User }) => {
     return (

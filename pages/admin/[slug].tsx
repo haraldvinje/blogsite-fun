@@ -1,5 +1,5 @@
-import AuthCheck from '../../components/AuthCheck'
-import { PostManager } from '../../components/PostComponents/PostManager'
+import AuthCheck from 'components/AuthCheck'
+import { PostManager } from 'components/PostComponents/PostManager'
 
 const AdminPostsPage = () => {
     return (

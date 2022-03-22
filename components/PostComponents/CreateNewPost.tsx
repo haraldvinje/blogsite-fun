@@ -5,8 +5,9 @@ import { useRouter } from "next/router"
 import kebabCase from 'lodash.kebabcase'
 import { toast } from 'react-hot-toast'
 import { v4 as uuidv4 } from 'uuid';
-import { UserContext } from "../../lib/context"
+import { UserContext } from "lib/context"
 import { FormEvent } from "react"
+import { slugAvailable } from "lib/firebase/firestore"
 
 export const CreateNewPost = () => {
     const router = useRouter()
@@ -54,7 +55,7 @@ export const CreateNewPost = () => {
             <p>
                 <strong>ID: </strong>{slug}
             </p>
-            <button type="submit" disabled={!isValid} 
+            <button type="submit" disabled={!isValid}
                 className={`my-2 py-4 px-8 bg-light-green rounded-md text-white
                     ${!isValid ? "bg-dark-green cursor-not-allowed" : "hover:bg-green"}`}
             >

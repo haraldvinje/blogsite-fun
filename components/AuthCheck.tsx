@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useContext } from 'react'
 import { ReactNode } from 'react-markdown/lib/react-markdown'
-import { UserContext } from '../lib/context'
+import { UserContext } from 'lib/context'
 
 const AuthCheck = ({ children, fallback }: { children?: ReactNode, fallback?: ReactNode }) => {
     const { username } = useContext(UserContext)

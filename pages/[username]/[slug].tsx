@@ -1,11 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { collectionGroup, getFirestore, doc, getDocs, query, limit, where, collection } from 'firebase/firestore'
-import { isEmpty } from '../../lib/utils'
-import { getUserWithUsername, Post, postToJSON } from '../../lib/firebase/firestore'
+import { isEmpty } from 'lib/utils'
+import { getUserWithUsername, Post, postToJSON } from 'lib/firebase/firestore'
 import { useDocumentData } from 'react-firebase-hooks/firestore'
-import { PostContent } from '../../components/PostComponents/PostContent'
-import AuthCheck from '../../components/AuthCheck'
-import { HeartButton } from '../../components/PostComponents/HeartButton'
+import { PostContent } from 'components/PostComponents/PostContent'
+import AuthCheck from 'components/AuthCheck'
+import { HeartButton } from 'components/PostComponents/HeartButton'
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { username, slug } = params as { username: string; slug: string }

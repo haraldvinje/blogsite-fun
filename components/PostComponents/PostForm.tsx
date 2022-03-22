@@ -1,10 +1,12 @@
 import { updateDoc, DocumentReference, DocumentData, serverTimestamp } from 'firebase/firestore'
+import { slugAvailable } from 'lib/firebase/firestore'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import kebabCase from 'lodash.kebabcase'
-import { Post } from '../../lib/firebase/firestore'
-import { PostContent } from './PostContent'
-import { ImageUploader } from './ImageUploader'
+import { Post } from 'lib/firebase/firestore'
+import { PostContent } from 'components/PostComponents/PostContent'
+import { ImageUploader } from 'components/PostComponents/ImageUploader'
+import { getAuth } from 'firebase/auth'
 
 type FormInputs = {
     title: string;
@@ -55,9 +57,9 @@ export const PostForm = (
             {preview && (
                 <PostContent post={{
                     ...originalPostValues,
-                    title: watch('title'), 
-                    content: watch('content'), 
-                    slug: slug, 
+                    title: watch('title'),
+                    content: watch('content'),
+                    slug: slug,
                 }} />
             )}
 
