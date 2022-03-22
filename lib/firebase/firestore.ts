@@ -47,3 +47,13 @@ export function postToJSON(doc: DocumentSnapshot) {
     }
 }
 
+
+export async function slugAvailable(uid: string, slug: string) {
+    const postsRef = collection(getFirestore(), 'users', uid, 'posts')
+    const postsQuery = query(
+        postsRef,
+        where('slug', '==', slug)
+    )
+    const posts = (await getDocs(postsQuery)).docs.map(postToJSON)
+    return !(posts && posts.length > 0)
+}

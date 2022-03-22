@@ -19,20 +19,27 @@ export const CreateNewPost = () => {
         e.preventDefault()
         const uid = getAuth().currentUser.uid
         const ref = doc(getFirestore(), 'users', uid, 'posts', uuidv4())
-        const data = {
-            title,
-            slug,
-            uid,
-            username,
-            published: false,
-            content: '# hello world!',
-            createdAt: serverTimestamp(),
-            updatedAt: serverTimestamp(),
-            heartCount: 0
-        }
-        await setDoc(ref, data)
-        toast.success('Post created')
-        router.push(`/admin/${slug}`)
+        slugAvailable(uid, slug).then(available => {
+            if (available) {
+                const data = {
+                    title,
+                    slug,
+                    uid,
+                    username,
+                    published: false,
+                    content: '# hello world!',
+                    createdAt: serverTimestamp(),
+                    updatedAt: serverTimestamp(),
+                    heartCount: 0
+                }
+                setDoc(ref, data)
+                toast.success('Post created')
+                router.push(`/admin/${slug}`)
+            }
+            else {
+                toast.error('Title already exists. Change title.')
+            }
+        }).catch(() => toast.error('Something went wrong'))
     }
 
 
