@@ -14,17 +14,18 @@ export const CreateNewPost = () => {
     const { username } = useContext(UserContext)
     const [title, setTitle] = useState('')
     const slug = encodeURI(kebabCase(title))
-    const isValid = title.length > 3 && title.length < 100
+    const isValid = title === title.trim() && title.length > 3 && title.length < 100
 
     const createPost = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const uid = getAuth().currentUser.uid
         const ref = doc(getFirestore(), 'users', uid, 'posts', uuidv4())
-        slugAvailable(uid, slug).then(available => {
+        const cleanSlug = slug.trim()
+        slugAvailable(uid, cleanSlug).then(available => {
             if (available) {
                 const data = {
                     title,
-                    slug,
+                    slug: cleanSlug,
                     uid,
                     username,
                     published: false,
@@ -35,7 +36,7 @@ export const CreateNewPost = () => {
                 }
                 setDoc(ref, data)
                 toast.success('Post created')
-                router.push(`/admin/${slug}`)
+                router.push(`/admin/${cleanSlug}`)
             }
             else {
                 toast.error('Title already exists. Change title.')
