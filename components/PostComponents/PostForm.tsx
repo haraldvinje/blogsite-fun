@@ -31,10 +31,10 @@ export const PostForm = (
     const updatePost = async ({ title, content, published }) => {
         const data = { title, content, published, slug: slug, updatedAt: serverTimestamp() }
         slugAvailable(getAuth().currentUser.uid, slug).then(available => {
-            if (available) {
+            if (available || title === originalPostValues.title) {
                 updateDoc(postRef, data)
                 toast.success("Updated successfully!")
-                reset({ content, published })
+                reset({ title, content, published })
             }
             else {
                 toast.error('Title already exists. Change title.')

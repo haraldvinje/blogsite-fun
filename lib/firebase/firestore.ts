@@ -54,6 +54,6 @@ export async function slugAvailable(uid: string, slug: string) {
         postsRef,
         where('slug', '==', slug)
     )
-    const posts = (await getDocs(postsQuery)).docs.map(postToJSON)
-    return !(posts && posts.length > 0)
+    const postExists = (await getDocs(postsQuery)).docs.some(doc => doc.exists())
+    return !(postExists)
 }

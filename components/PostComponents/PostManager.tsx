@@ -23,13 +23,17 @@ export const PostManager = () => {
                 where('slug', '==', slug)
             )
             const post = (await getDocs(postsQuery)).docs.map(postToJSON)[0]
-            setPost(post)
-            setPostRef(doc(getFirestore(), 'users', uid, 'posts', post.docId))
+            if (post) {
+                setPost(post)
+                setPostRef(doc(getFirestore(), 'users', uid, 'posts', post.docId))
+            } else {
+                router.push('/admin')
+            }
         }
         if (slug !== undefined) {
             fetchAndSetPost()
         }
-    }, [router.isReady, router.query])
+    }, [router])
 
     return (
         <main className='w-[100%]'>
