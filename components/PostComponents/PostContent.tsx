@@ -1,13 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import { Timestamp } from 'firebase/firestore'
 import { Post } from 'lib/firebase/firestore'
 import { toDateTimeString } from 'lib/utils'
 
 export const PostContent = ({post}: {post: Post}) => {
     const createdAt =
         typeof post.createdAt === 'number'
-            ? new Date(post.createdAt)
+            ? Timestamp.fromMillis(post.createdAt)
             : post.createdAt
 
     return (
