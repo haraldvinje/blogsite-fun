@@ -36,7 +36,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
             return
         }
 
-        const last = visiblePosts[posts.length - 1]
+        const last = visiblePosts[visiblePosts.length - 1]
         const cursor =
             typeof last.createdAt === 'number'
                 ? Timestamp.fromMillis(last.createdAt)
