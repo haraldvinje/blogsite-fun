@@ -14,7 +14,7 @@ export const HeartButton = ({ postRef }: { postRef: DocumentReference }) => {
     const [heartDoc] = useDocument(heartRef)
 
     const addHeart = async () => {
-        const uid = getAuth().currentUser.uid
+        const uid = user.uid
         const batch = writeBatch(getFirestore())
 
         batch.update(postRef, { heartCount: increment(1) })

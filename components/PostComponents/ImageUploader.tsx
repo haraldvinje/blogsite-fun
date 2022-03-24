@@ -1,7 +1,7 @@
 import { getAuth } from "firebase/auth"
 import { ChangeEvent, useState } from "react"
-import { storage, STATE_CHANGED } from "lib/firebase/firebase"
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
+import { storage, STATE_CHANGED } from "lib/firebase/firebase"
 import { Loader } from "components/Loader"
 
 export const ImageUploader = () => {
