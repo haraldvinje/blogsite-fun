@@ -1,6 +1,6 @@
 # Blogsite Fun
 
-Experimenting with NextJS.
+Experimenting with NextJS. Based on the [Fireship course on NextJS](https://fireship.io/courses/react-next-firebase/), with some slight changes.
 
 ## Development
 
