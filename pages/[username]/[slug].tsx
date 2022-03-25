@@ -19,7 +19,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         const postsRef = collection(getFirestore(), userDoc.ref.path, 'posts')
         const postQuery = query(
             postsRef,
-            where('slug', '==', slug)
+            where('slug', '==', slug),
+            where('published', '==', true)
         )
         try {
             post = (await getDocs(postQuery)).docs.map(postToJSON)[0]
@@ -38,7 +39,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const q = query(collectionGroup(getFirestore(), 'posts'), limit(20))
+    const q = query(collectionGroup(getFirestore(), 'posts'), where('published', '==', true), limit(20))
     const snapshot = await getDocs(q)
 
     const paths = snapshot.docs.map((doc) => {
