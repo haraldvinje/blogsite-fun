@@ -25,17 +25,17 @@ export const PostItem = ({ post, admin = false }: { post: Post; admin: boolean }
                     </h1>
                 </Link>
 
-                <footer className="w-full">
-                    <span className="text-sm mr-2">
+                <footer className="w-full flex justify-between">
+                    <span className="sm:text-sm text-xs mr-2">
                         {wordCount} words. {minutesToRead} min read.
                     </span>
                     {admin ?
-                        <span className="text-sm">
+                        <span className="sm:text-sm text-xs">
                             {post.published ? "✅ Published" : "❌ Not published"}
                         </span> :
                         <></>
                     }
-                    <span className="text-right block float-right">
+                    <span className='sm:text-sm text-xs'>
                         💙 {post.heartCount} hearts
                     </span>
                 </footer>
