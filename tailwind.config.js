@@ -38,6 +38,7 @@ module.exports = {
         green: "#00AA00",
         "dark-green": "#009900",
         red: "#FF0000",
+        "dark-red": "#DD0000",
         emerald: colors.emerald,
         indigo: colors.indigo,
         yellow: colors.yellow,

@@ -42,8 +42,8 @@ export function postToJSON(doc: DocumentSnapshot) {
     return {
         ...data,
         docId: doc.id,
-        createdAt: (data?.createdAt as Timestamp).toMillis() || 0,
-        updatedAt: (data?.updatedAt as Timestamp).toMillis() || 0
+        createdAt: (data?.createdAt as Timestamp)?.toMillis() || 0,
+        updatedAt: (data?.updatedAt as Timestamp)?.toMillis() || 0
     }
 }
 

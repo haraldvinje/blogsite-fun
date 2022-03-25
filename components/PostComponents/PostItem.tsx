@@ -26,9 +26,15 @@ export const PostItem = ({ post, admin = false }: { post: Post; admin: boolean }
                 </Link>
 
                 <footer className="w-full">
-                    <span className="text-sm">
+                    <span className="text-sm mr-2">
                         {wordCount} words. {minutesToRead} min read.
                     </span>
+                    {admin ?
+                        <span className="text-sm">
+                            {post.published ? "✅ Published" : "❌ Not published"}
+                        </span> :
+                        <></>
+                    }
                     <span className="text-right block float-right">
                         💙 {post.heartCount} hearts
                     </span>
