@@ -10,7 +10,7 @@ export const PostItem = ({ post, admin = false }: { post: Post; admin: boolean }
 
     return (
         <Link href={postUrl} passHref>
-            <div className="w-full p-4 my-2 bg-white border border-gray
+            <div className="w-full p-4 my-2 bg-white border border-gray rounded-md
                 hover:scale-105 duration-300"
             >
                 <Link href={`/${post.username}`}>

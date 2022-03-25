@@ -21,10 +21,13 @@ const Navbar = () => {
     return (
         <nav className="fixed top-0 bg-white flex w-screen border-b border-gray h-20">
             <div className="flex flex-wrap w-[100%]">
-                <ul className="h-[100%] w-[100%] flex items-center mx-[20%] xl:mx-[40%]">
+                <ul className="h-[100%] w-[100%] flex items-center mx-[20%]">
                     <li className="h-[100%] flex items-center">
                         <Link href="/" passHref>
-                            <button className="bg-black font-bold py-3 px-4 text-white text-xl rounded-md">
+                            <button
+                                className="bg-black font-bold py-3 px-4
+                                    text-white text-xl rounded-md hover:text-gray"
+                            >
                                 FEED
                             </button>
                         </Link>
@@ -32,7 +35,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="flex flex-wrap w-[100%]">
-                <ul className="h-[100%] w-[100%] flex flex-row-reverse mx-[20%] xl:mx-[40%] items-center">
+                <ul className="h-[100%] w-[100%] flex flex-row-reverse mx-[20%] items-center">
                     {username && (
                         <>
                             <li className="flex items-center">
@@ -64,7 +67,7 @@ const Navbar = () => {
                             <li className="flex items-center">
                                 <Link href="/admin" passHref>
                                     <button className="bg-blue py-2 sm:py-4 px-2 sm:px-10 mx-2
-                                        text-white text-[10px] font-extrabold rounded-md xl:px-4"
+                                        text-white text-[10px] font-extrabold rounded-md xl:px-4 hover:text-gray"
                                     >
                                         Write Posts
                                     </button>
@@ -79,7 +82,7 @@ const Navbar = () => {
                                 <Link href="/enter" passHref>
                                     <button
                                         className="bg-blue py-4 px-10 
-                                            text-white text-[10px] font-extrabold rounded-md"
+                                            text-white text-[10px] font-extrabold rounded-md hover:text-gray"
                                     >
                                         Log In
                                     </button>

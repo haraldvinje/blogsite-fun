@@ -27,9 +27,9 @@ function SignInButton() {
     return (
         <button
             className="flex items-center justify-center
-                rounded-md bg-white
+                rounded-md bg-gray
                 h-16 w-1/5 min-w-[200px] max-w-[300px]
-                text-sm font-bold"
+                text-sm font-bold hover:bg-dark-gray"
             onClick={googleSignInWithPopup}
         >
             <img className="h-2/3 mr-2" src='/google.png' alt="Logo"/> Sign in with
