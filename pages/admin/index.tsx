@@ -83,7 +83,7 @@ function CreateNewPost() {
 
 function PostList() {
     const userPostsRef = collection(getFirestore(), 'users', getAuth().currentUser.uid, 'posts')
-    const postQuery = query(userPostsRef, orderBy('createdAt'))
+    const postQuery = query(userPostsRef, orderBy('createdAt', 'desc'))
     const [querySnapshot] = useCollection(postQuery)
     const posts = querySnapshot?.docs.map((doc) => doc.data() as Post)
 

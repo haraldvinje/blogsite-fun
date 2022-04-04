@@ -1,7 +1,7 @@
 import { ReactNode, } from 'react'
 import { useRouter } from 'next/router'
 import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion'
-import { fadeIn } from '../../lib/animations'
+import { fadeIn } from 'lib/animations'
 
 
 const AnimationLayout = ({ children }: { children: ReactNode}) => {

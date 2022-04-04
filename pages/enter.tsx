@@ -32,8 +32,8 @@ function SignInButton() {
                 text-sm font-bold hover:bg-dark-gray"
             onClick={googleSignInWithPopup}
         >
-            <img className="h-2/3 mr-2" src='/google.png' alt="Logo"/> Sign in with
-            Google
+            <img className="h-2/3 mr-2" src='/google.png' alt="Logo"/>
+            Sign in with Google
         </button>
     )
 }
@@ -141,23 +141,23 @@ function UsernameForm() {
 }
 
 function UsernameMessage({username, isValid, loading}: { username: string; isValid: boolean; loading: boolean}) {
-    const commonClass = 'my-2'
+    const style = 'my-2'
     if (loading) {
-        return <p className={`${commonClass}`}>Checking...</p>
+        return <p className={`${style}`}>Checking...</p>
     } else if (isValid) {
         return (
-            <p className={`${commonClass} text-green`}>
+            <p className={`${style} text-green`}>
                 {username} is available
             </p>
         )
     } else if (username && !isValid) {
         return (
-            <p className={`${commonClass} text-red`}>
+            <p className={`${style} text-red`}>
                 {username} is not available
             </p>
         )
     } else {
-        return <p className={`${commonClass}`}></p>
+        return <p className={`${style}`}></p>
     }
 }
 
