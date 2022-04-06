@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useCallback, useEffect, useState } from 'react'
+import Image from 'next/image'
 import { getFirestore, doc, getDoc, writeBatch } from 'firebase/firestore'
 import debounce from 'lodash.debounce'
 import { authSignOut, googleSignInWithPopup } from 'lib/firebase/auth'
@@ -32,7 +33,7 @@ function SignInButton() {
                 text-sm font-bold hover:bg-dark-gray"
             onClick={googleSignInWithPopup}
         >
-            <img className="h-2/3 mr-2" src='/google.png' alt="Logo"/>
+            <Image src='/google.png' width={50} height={50} alt="Logo"/>
             Sign in with Google
         </button>
     )
