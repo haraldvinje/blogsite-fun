@@ -3,6 +3,7 @@ import { query, getFirestore, collection, where, getDocs, limit, orderBy } from 
 import { getUserWithUsername, postToJSON, User, Post } from "../../lib/firebase/firestore"
 import UserProfile from 'components/UserProfile'
 import { PostFeed } from 'components/PostComponents/PostFeed'
+import Metatags from "components/Metatags"
 
 export const getServerSideProps: GetServerSideProps = async ({
     query: urlQuery
@@ -38,10 +39,13 @@ export const getServerSideProps: GetServerSideProps = async ({
 
 const UserProfilePage = ({ user, posts }: { user: User; posts: Post[] }) => {
     return (
-        <main>
-            <UserProfile user={user} />
-            <PostFeed posts={posts} admin={false} />
-        </main>
+        <>
+            <Metatags title={`Posts by ${user.username}`}/>
+            <main>
+                <UserProfile user={user} />
+                <PostFeed posts={posts} admin={false} />
+            </main>
+        </>
     )
 }
 

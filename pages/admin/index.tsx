@@ -12,15 +12,19 @@ import { UserContext } from "lib/context"
 import { PostFeed } from "components/PostComponents/PostFeed"
 import { Post } from "lib/firebase/firestore"
 import { slugAvailable } from "lib/firebase/firestore"
+import Metatags from "components/Metatags"
 
 const AdminPostsPage = () => {
     return (
-        <main>
-            <AuthCheck>
-                <CreateNewPost />
-                <PostList />
-            </AuthCheck>
-        </main>
+        <>
+            <Metatags title="Admin" />
+            <main>
+                <AuthCheck>
+                    <CreateNewPost />
+                    <PostList />
+                </AuthCheck>
+            </main>
+        </>
     )
 }
 
