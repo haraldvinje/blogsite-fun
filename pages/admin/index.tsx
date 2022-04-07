@@ -11,7 +11,7 @@ import AuthCheck from 'components/AuthCheck'
 import { UserContext } from 'lib/context'
 import { PostFeed } from 'components/PostComponents/PostFeed'
 import { Post } from 'lib/firebase/firestore'
-import { slugAvailable } from 'lib/firebase/firestore'
+import { getPostByUserAndSlug } from 'lib/firebase/firestore'
 import Metatags from 'components/Metatags'
 
 const AdminPostsPage = () => {
@@ -40,15 +40,15 @@ function CreateNewPost() {
         const uid = getAuth().currentUser.uid
         const ref = doc(getFirestore(), 'users', uid, 'posts', uuidv4())
         const cleanSlug = slug.trim()
-        slugAvailable(uid, cleanSlug).then(available => {
-            if (available) {
+        getPostByUserAndSlug(uid, cleanSlug).then(post => {
+            if (!post) {
                 const data = {
                     title,
                     slug: cleanSlug,
                     uid,
                     username,
                     published: false,
-                    content: '# hello world!',
+                    content: '# Title',
                     createdAt: serverTimestamp(),
                     updatedAt: serverTimestamp(),
                     heartCount: 0
