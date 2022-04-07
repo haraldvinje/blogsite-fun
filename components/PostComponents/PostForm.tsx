@@ -78,8 +78,10 @@ export const PostForm = (
             {errors.title && <p className='text-red font-bold'>{errors.title.message}</p>}
             {errors.content && <p className='text-red font-bold'>{errors.content.message}</p>}
             <fieldset>
-                <input className='my-4' name='published' type='checkbox' {...register('published')} />
-                <label>Published</label>
+                <label>
+                    <input className='my-4' name='published' type='checkbox' {...register('published')} />
+                    Published
+                </label>
             </fieldset>
 
             <button type="submit"
