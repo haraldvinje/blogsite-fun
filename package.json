@@ -8,6 +8,8 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "eslint": "npx eslint",
+        "eslint:fix": "npx eslint --fix",
         "cypress": "cypress open",
         "cypress:headless": "cypress run"
     },
