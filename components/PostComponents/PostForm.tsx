@@ -1,5 +1,5 @@
 import { updateDoc, DocumentReference, DocumentData, serverTimestamp } from 'firebase/firestore'
-import { slugAvailable } from 'lib/firebase/firestore'
+import { getPostByUserAndSlug } from 'lib/firebase/firestore'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import kebabCase from 'lodash.kebabcase'
@@ -30,14 +30,14 @@ export const PostForm = (
 
     const updatePost = async ({ title, content, published }) => {
         const data = { title, content, published, slug: slug, updatedAt: serverTimestamp() }
-        slugAvailable(getAuth().currentUser.uid, slug).then(available => {
-            if (available || title === originalPostValues.title) {
+        getPostByUserAndSlug(getAuth().currentUser.uid, slug).then(post => {
+            if (post?.title === title && post?.docId !== postRef.id) {
+                toast.error('Title already exists. Change title.')
+            }
+            else {
                 updateDoc(postRef, data)
                 toast.success("Updated successfully!")
                 reset({ title, content, published })
-            }
-            else {
-                toast.error('Title already exists. Change title.')
             }
         }).catch(() => toast.error('Something went wrong'))
     }

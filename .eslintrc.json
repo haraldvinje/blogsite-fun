@@ -15,7 +15,11 @@
     "no-console": "warn",
     "no-undef": "off",
     "no-unused-vars": "off",
-    "max-len": [1, 120, 2, {
+    "max-len": [
+      1,
+      120,
+      2,
+      {
         "ignorePattern": "^import .*"
       }
     ],
@@ -24,6 +28,13 @@
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-unused-vars": "warn",
     "@next/next/no-img-element": "off",
+    "@typescript-eslint/quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
     "react/display-name": "off",
     "react/no-children-prop": "off",
     "react/react-in-jsx-scope": "off",

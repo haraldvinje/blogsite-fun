@@ -36,7 +36,7 @@ export async function getUserWithUsername(
  * Converts a firestore document to JSON
  * @param  {DocumentSnapshot} doc
  */
-export function postToJSON(doc: DocumentSnapshot) {
+export function postToJSON(doc: DocumentSnapshot): Post|null {
     const data = doc.data() as Post
     if (!data) return null
     return {
@@ -44,16 +44,15 @@ export function postToJSON(doc: DocumentSnapshot) {
         docId: doc.id,
         createdAt: (data?.createdAt as Timestamp)?.toMillis() || 0,
         updatedAt: (data?.updatedAt as Timestamp)?.toMillis() || 0
-    }
+    } as Post
 }
 
 
-export async function slugAvailable(uid: string, slug: string) {
+export async function getPostByUserAndSlug(uid: string, slug: string): Promise<Post|null> {
     const postsRef = collection(getFirestore(), 'users', uid, 'posts')
     const postsQuery = query(
         postsRef,
         where('slug', '==', slug)
     )
-    const postExists = (await getDocs(postsQuery)).docs.some(doc => doc.exists())
-    return !(postExists)
+    return (await getDocs(postsQuery))?.docs?.map(postToJSON)?.[0]
 }
