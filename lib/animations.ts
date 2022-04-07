@@ -1,5 +1,5 @@
 export const fadeIn = {
-  name: "Fade In",
+  name: 'Fade In',
   variants: {
     initial: {
       opacity: 0

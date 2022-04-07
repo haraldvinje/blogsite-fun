@@ -51,10 +51,10 @@ export const PostManager = () => {
 
     const handleDelete = async () => {
         deleteDoc(postRef).then(() => {
-            toast.success("Post deleted")
+            toast.success('Post deleted')
             router.push('/admin')
        }).catch(() => {
-            toast.error("Something went wrong.")
+            toast.error('Something went wrong.')
        })
     }
 

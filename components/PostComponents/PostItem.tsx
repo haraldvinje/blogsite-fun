@@ -31,7 +31,7 @@ export const PostItem = ({ post, admin = false }: { post: Post; admin: boolean }
                     </span>
                     {admin ?
                         <span className="sm:text-sm text-xs">
-                            {post.published ? "✅ Published" : "❌ Not published"}
+                            {post.published ? '✅ Published' : '❌ Not published'}
                         </span> :
                         <></>
                     }

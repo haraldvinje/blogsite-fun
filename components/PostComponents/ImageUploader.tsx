@@ -1,13 +1,13 @@
-import { getAuth } from "firebase/auth"
-import { ChangeEvent, useState } from "react"
+import { getAuth } from 'firebase/auth'
+import { ChangeEvent, useState } from 'react'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
-import { storage, STATE_CHANGED } from "lib/firebase/firebase"
-import { Loader } from "components/Loader"
+import { storage, STATE_CHANGED } from 'lib/firebase/firebase'
+import { Loader } from 'components/Loader'
 
 export const ImageUploader = () => {
 
     const [uploading, setUploading] = useState(false)
-    const [progress, setProgress] = useState("0")
+    const [progress, setProgress] = useState('0')
     const [downloadURL, setDownloadURL] = useState(null)
 
     const uploadFile = async (e: ChangeEvent<HTMLInputElement>) => {

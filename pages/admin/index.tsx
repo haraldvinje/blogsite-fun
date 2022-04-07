@@ -1,18 +1,18 @@
-import { doc, serverTimestamp, setDoc, getFirestore, collection, query, orderBy } from "firebase/firestore"
-import { getAuth } from "firebase/auth"
-import { useContext, useState } from "react"
-import { useRouter } from "next/router"
-import { useCollection } from "react-firebase-hooks/firestore"
+import { doc, serverTimestamp, setDoc, getFirestore, collection, query, orderBy } from 'firebase/firestore'
+import { getAuth } from 'firebase/auth'
+import { useContext, useState } from 'react'
+import { useRouter } from 'next/router'
+import { useCollection } from 'react-firebase-hooks/firestore'
 import kebabCase from 'lodash.kebabcase'
 import { toast } from 'react-hot-toast'
 import { v4 as uuidv4 } from 'uuid';
-import { FormEvent } from "react"
-import AuthCheck from "components/AuthCheck"
-import { UserContext } from "lib/context"
-import { PostFeed } from "components/PostComponents/PostFeed"
-import { Post } from "lib/firebase/firestore"
-import { slugAvailable } from "lib/firebase/firestore"
-import Metatags from "components/Metatags"
+import { FormEvent } from 'react'
+import AuthCheck from 'components/AuthCheck'
+import { UserContext } from 'lib/context'
+import { PostFeed } from 'components/PostComponents/PostFeed'
+import { Post } from 'lib/firebase/firestore'
+import { slugAvailable } from 'lib/firebase/firestore'
+import Metatags from 'components/Metatags'
 
 const AdminPostsPage = () => {
     return (
@@ -76,7 +76,7 @@ function CreateNewPost() {
             </p>
             <button type="submit" disabled={!isValid}
                 className={`my-2 py-4 px-8 bg-light-green rounded-md text-white
-                    ${!isValid ? "bg-dark-green cursor-not-allowed" : "hover:bg-green"}`}
+                    ${!isValid ? 'bg-dark-green cursor-not-allowed' : 'hover:bg-green'}`}
             >
                 Create New Post
             </button>

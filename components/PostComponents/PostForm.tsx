@@ -36,7 +36,7 @@ export const PostForm = (
             }
             else {
                 updateDoc(postRef, data)
-                toast.success("Updated successfully!")
+                toast.success('Updated successfully!')
                 reset({ title, content, published })
             }
         }).catch(() => toast.error('Something went wrong'))
@@ -63,7 +63,7 @@ export const PostForm = (
                 }} />
             )}
 
-            <div className={`${preview ? "hidden" : ""} min-h-full`}>
+            <div className={`${preview ? 'hidden' : ''} min-h-full`}>
                 <ImageUploader />
                 <textarea
                     className='w-full h-[38rem] px-2 border-2 border-gray'

@@ -1,9 +1,9 @@
-import { GetServerSideProps } from "next"
+import { GetServerSideProps } from 'next'
 import { query, getFirestore, collection, where, getDocs, limit, orderBy } from 'firebase/firestore'
-import { getUserWithUsername, postToJSON, User, Post } from "../../lib/firebase/firestore"
+import { getUserWithUsername, postToJSON, User, Post } from '../../lib/firebase/firestore'
 import UserProfile from 'components/UserProfile'
 import { PostFeed } from 'components/PostComponents/PostFeed'
-import Metatags from "components/Metatags"
+import Metatags from 'components/Metatags'
 
 export const getServerSideProps: GetServerSideProps = async ({
     query: urlQuery
