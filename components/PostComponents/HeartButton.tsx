@@ -4,39 +4,43 @@ import { getAuth } from 'firebase/auth'
 import { useDocument } from 'react-firebase-hooks/firestore'
 
 export const HeartButton = ({ postRef }: { postRef: DocumentReference }) => {
+  const user = getAuth().currentUser
 
-    const user = getAuth().currentUser
-    
-    let heartRef: DocumentReference
-    if (user) {
-        heartRef = doc(getFirestore(), postRef.path, 'hearts', user.uid)
-    }
-    const [heartDoc] = useDocument(heartRef)
+  let heartRef: DocumentReference
+  if (user) {
+    heartRef = doc(getFirestore(), postRef.path, 'hearts', user.uid)
+  }
+  const [heartDoc] = useDocument(heartRef)
 
-    const addHeart = async () => {
-        const uid = user.uid
-        const batch = writeBatch(getFirestore())
+  const addHeart = async () => {
+    const uid = user.uid
+    const batch = writeBatch(getFirestore())
 
-        batch.update(postRef, { heartCount: increment(1) })
-        batch.set(heartRef, { uid })
+    batch.update(postRef, { heartCount: increment(1) })
+    batch.set(heartRef, { uid })
 
-        await batch.commit()
-    }
+    await batch.commit()
+  }
 
-    const removeHeart = async () => {
-        const batch = writeBatch(getFirestore())
+  const removeHeart = async () => {
+    const batch = writeBatch(getFirestore())
 
-        batch.update(postRef, { heartCount: increment(-1) })
-        batch.delete(heartRef)
+    batch.update(postRef, { heartCount: increment(-1) })
+    batch.delete(heartRef)
 
-        await batch.commit()
-    }
+    await batch.commit()
+  }
 
-    const style = 'bg-gray hover:bg-dark-gray border-2 border-black px-2 py-2 rounded-md'
+  const style = 'bg-gray hover:bg-dark-gray border-2 border-black px-2 py-2 rounded-md'
 
-    return heartDoc?.exists() ? (
-        <button className={style} onClick={removeHeart}>💔 Unheart</button>
-    ) : (
-        <button className={style} onClick={addHeart}> 💙 Heart </button>
-    )
+  return heartDoc?.exists() ? (
+    <button className={style} onClick={removeHeart}>
+      💔 Unheart
+    </button>
+  ) : (
+    <button className={style} onClick={addHeart}>
+      {' '}
+      💙 Heart{' '}
+    </button>
+  )
 }

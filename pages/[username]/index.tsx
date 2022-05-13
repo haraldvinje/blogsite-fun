@@ -5,49 +5,46 @@ import UserProfile from 'components/UserProfile'
 import { PostFeed } from 'components/PostComponents/PostFeed'
 import Metatags from 'components/Metatags'
 
-export const getServerSideProps: GetServerSideProps = async ({
-    query: urlQuery
-}) => {
-    const { username } = urlQuery
+export const getServerSideProps: GetServerSideProps = async ({ query: urlQuery }) => {
+  const { username } = urlQuery
 
-    const userDoc = await getUserWithUsername(username as string)
+  const userDoc = await getUserWithUsername(username as string)
 
-    if (!userDoc) {
-        return {
-            notFound: true
-        }
-    }
-
-    let user = null
-    let posts = null
-
-    if (userDoc) {
-        user = userDoc.data()
-        const postsQuery = query(
-            collection(getFirestore(), userDoc.ref.path, 'posts'),
-            where('published', '==', true),
-            orderBy('createdAt', 'desc'),
-            limit(5)
-        )
-        posts = (await getDocs(postsQuery)).docs.map(postToJSON)
-    }
-
+  if (!userDoc) {
     return {
-        props: { user, posts }
+      notFound: true
     }
+  }
+
+  let user = null
+  let posts = null
+
+  if (userDoc) {
+    user = userDoc.data()
+    const postsQuery = query(
+      collection(getFirestore(), userDoc.ref.path, 'posts'),
+      where('published', '==', true),
+      orderBy('createdAt', 'desc'),
+      limit(5)
+    )
+    posts = (await getDocs(postsQuery)).docs.map(postToJSON)
+  }
+
+  return {
+    props: { user, posts }
+  }
 }
 
 const UserProfilePage = ({ user, posts }: { user: User; posts: Post[] }) => {
-    return (
-        <>
-            <Metatags title={`Posts by ${user.username}`}/>
-            <main>
-                <UserProfile user={user} />
-                <PostFeed posts={posts} admin={false} />
-            </main>
-        </>
-    )
+  return (
+    <>
+      <Metatags title={`Posts by ${user.username}`} />
+      <main>
+        <UserProfile user={user} />
+        <PostFeed posts={posts} admin={false} />
+      </main>
+    </>
+  )
 }
 
 export default UserProfilePage
-

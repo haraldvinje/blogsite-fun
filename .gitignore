@@ -39,3 +39,6 @@ ui-debug.log*
 
 # vercel
 .vercel
+
+# testing data
+emulatordata/

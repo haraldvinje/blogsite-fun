@@ -1,61 +1,12 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "next/core-web-vitals",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "plugins": [
-    "react",
-    "react-hooks",
-    "@typescript-eslint"
-  ],
+  "plugins": ["tailwindcss"],
+  "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended", "prettier"],
   "rules": {
-    "eqeqeq": "error",
-    "no-console": "warn",
-    "no-undef": "off",
-    "no-unused-vars": "off",
-    "max-len": [
-      1,
-      120,
-      2,
+    "tailwindcss/classnames-order": [
+      "warn",
       {
-        "ignorePattern": "^import .*"
+        "officialSorting": true
       }
-    ],
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-unused-vars": "warn",
-    "@next/next/no-img-element": "off",
-    "@typescript-eslint/quotes": [
-      "error",
-      "single",
-      {
-        "allowTemplateLiterals": true
-      }
-    ],
-    "react/display-name": "off",
-    "react/no-children-prop": "off",
-    "react/react-in-jsx-scope": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
-  },
-  "ignorePatterns": [
-    "node_modules",
-    "public"
-  ]
+    ]
+  }
 }
