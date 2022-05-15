@@ -33,7 +33,7 @@ export const DropdownMenu = ({ head, children }: Props) => {
           {Children.map(childrenArray, (child: ReactElement) => {
             return (
               <Menu.Item>
-                <div className="block px-4 py-2 text-sm text-gray">{child}</div>
+                <div className="block px-4 py-2 text-sm text-black">{child}</div>
               </Menu.Item>
             )
           })}

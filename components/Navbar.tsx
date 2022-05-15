@@ -50,8 +50,7 @@ const Navbar = () => {
                   }
                 >
                   <p
-                    className="text-left
-                                        text-[6px] font-bold sm:text-[10px]"
+                    className="text-left text-[6px] font-bold sm:text-[10px]"
                   >
                     {(user as User)?.email}
                   </p>
