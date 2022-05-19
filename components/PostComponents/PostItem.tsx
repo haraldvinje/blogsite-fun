@@ -4,7 +4,7 @@ import { Post } from 'lib/firebase/firestore'
 
 export const PostItem = ({ post, admin = false }: { post: Post; admin: boolean }) => {
   const wordCount = post?.content.trim().split(/\s+/g).length
-  const minutesToRead = (wordCount / 100 + 1).toFixed(0)
+  const minutesToRead = (wordCount / 180).toFixed(0)
 
   const postUrl = admin ? `/admin/${post.slug}` : `/${post.username}/${post.slug}`
 
