@@ -1,7 +1,7 @@
 import { initializeApp, getApp, FirebaseApp, FirebaseOptions } from 'firebase/app'
 import { getAuth, connectAuthEmulator } from 'firebase/auth'
 import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore'
-import { connectStorageEmulator, getStorage } from 'firebase/storage'
+import { getStorage, connectStorageEmulator } from 'firebase/storage'
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -28,7 +28,7 @@ export const storage = getStorage(firebaseApp)
 export const STATE_CHANGED = 'state_changed'
 
 const EMULATORS_STARTED = 'EMULATORS_STARTED'
-function startEmulators() {
+function connectEmulators() {
   if (!global[EMULATORS_STARTED]) {
     global[EMULATORS_STARTED] = true
     connectFirestoreEmulator(firestore, 'localhost', 8080)
@@ -37,6 +37,6 @@ function startEmulators() {
   }
 }
 
-if (process.env.NODE_ENV === 'development') {
-  startEmulators()
+if (process.env.NODE_ENV !== 'production' && !process.env.PROD_DATA) {
+  connectEmulators()
 }

@@ -1,6 +1,6 @@
 # Blogsite Fun
 
-Experimenting with NextJS. 
+Experimenting with NextJS.
 
 ## Development
 
@@ -8,7 +8,7 @@ This site uses Firebase as a backend, specifically Firebase Authentication, Fire
 
 To set it up, create a Firebase project and enable Firebase Authentication, Firestore and Storage. Create a `.env.local` file and set the following values:
 
-```
+```env
 NEXT_PUBLIC_API_KEY=sampleKey
 NEXT_PUBLIC_AUTH_DOMAIN=sampleDomain
 NEXT_PUBLIC_PROJECT_ID=sampleProject

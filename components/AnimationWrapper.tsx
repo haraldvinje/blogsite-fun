@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion'
 import { fadeIn } from 'lib/animations'
 
-const AnimationLayout = ({ children }: { children: ReactNode }) => {
+const AnimationWrapper = ({ children }: { children: ReactNode }) => {
   const animation = fadeIn
   const router = useRouter()
 
@@ -27,4 +27,4 @@ const AnimationLayout = ({ children }: { children: ReactNode }) => {
   )
 }
 
-export default AnimationLayout
+export default AnimationWrapper
