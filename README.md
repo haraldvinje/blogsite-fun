@@ -22,4 +22,4 @@ Run **`yarn`** to install dependencies and **`yarn dev`** to start the developme
 
 ### Firebase emulators
 
-Firebase emulators allow you to emulate Firebase services locally. Install the [Firebase CLI](https://firebase.google.com/docs/cli#install_the_firebase_cli) and run **`firebase emulators:start`** to start the emulators.
+Firebase emulators allow you to emulate Firebase services locally. **`yarn dev`** will automatically start firebase emulators and export any submitted data in the web app to a directory called `emulatordata`.
