@@ -30,7 +30,7 @@
     "react-firebase-hooks": "^5.0.2",
     "react-hook-form": "^7.27.1",
     "react-hot-toast": "^2.2.0",
-    "react-markdown": "^8.0.0",
+    "react-markdown": "^8.0.4",
     "react-modal": "^3.14.4",
     "react-overlays": "^5.1.1",
     "uuid": "^8.3.2"
