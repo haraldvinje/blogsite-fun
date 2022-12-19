@@ -22,9 +22,9 @@ function createFirebaseApp(config: FirebaseOptions): FirebaseApp {
 }
 
 export const firebaseApp = createFirebaseApp(firebaseConfig)
-export const firestore = getFirestore(firebaseApp)
-export const auth = getAuth(firebaseApp)
-export const storage = getStorage(firebaseApp)
+export const firestore = getFirestore()
+export const auth = getAuth()
+export const storage = getStorage()
 export const STATE_CHANGED = 'state_changed'
 
 const EMULATORS_STARTED = 'EMULATORS_STARTED'
