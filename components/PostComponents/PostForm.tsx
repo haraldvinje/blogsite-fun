@@ -31,7 +31,7 @@ export const PostForm = ({
   const slug = kebabCase(watch('title'))
 
   const updatePost = async ({ title, content, published }) => {
-    const data = { title, content, published, slug: slug, updatedAt: serverTimestamp() }
+    const data = { title, content, published, slug, updatedAt: serverTimestamp() }
     getPostByUserAndSlug(getAuth().currentUser.uid, slug)
       .then((post) => {
         if (post?.title === title && post?.docId !== postRef.id) {
