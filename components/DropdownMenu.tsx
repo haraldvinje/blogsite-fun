@@ -1,6 +1,5 @@
-import React, { ReactNode, Fragment, Children } from 'react'
+import { ReactNode, Fragment, Children } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import { ReactElement } from 'react-markdown/lib/react-markdown'
 
 interface Props {
   head: ReactNode
@@ -30,7 +29,7 @@ export const DropdownMenu = ({ head, children }: Props) => {
           className="absolute right-0 mt-2 origin-top-right rounded-md border-2 
                     border-gray bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
         >
-          {Children.map(childrenArray, (child: ReactElement) => {
+          {Children.map(childrenArray, (child: ReactNode) => {
             return (
               <Menu.Item>
                 <div className="block px-4 py-2 text-sm text-black">{child}</div>
