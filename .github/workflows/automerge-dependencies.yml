@@ -15,13 +15,9 @@ jobs:
         uses: dependabot/fetch-metadata@v1.1.1
         with:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
-      - name: Auto Approve
-        uses: hmarr/auto-approve-action@v3.1.0
-        with:
-          github-token: '${{ secrets.GITHUB_TOKEN }}'
-      - name: Enable auto-merge for Dependabot PRs
+      - name: Approve and automerge if checks are met
         if: ${{steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor'}}
-        run: gh pr merge --auto --rebase "$PR_URL"
+        run: gh pr review --approve "$PR_URL" && gh pr merge --auto --rebase "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
