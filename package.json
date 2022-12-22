@@ -23,7 +23,7 @@
     "csstype": "^3.0.10",
     "firebase": "^9.15.0",
     "framer-motion": "^8.0.1",
-    "gsap": "^3.9.1",
+    "gsap": "^3.11.4",
     "image-url-validator": "^1.0.4",
     "lodash.debounce": "^4.0.8",
     "lodash.kebabcase": "^4.1.1",
