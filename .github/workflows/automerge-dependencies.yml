@@ -18,7 +18,7 @@ jobs:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
           compat-lookup: true
       - name: Approve and rebase if conditions and checks are met
-        if: ${{steps.dependabot-metadata.outputs.compatibility-score >= 90 && (steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor')}}
+        if: ${{steps.metadata.outputs.compatibility-score >= 90 && (steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor')}}
         run: gh pr review --approve "$PR_URL" && gh pr merge --auto --rebase --delete-branch "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
