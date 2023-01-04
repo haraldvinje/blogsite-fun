@@ -2772,7 +2772,7 @@ eslint-config-next@13.1.1:
     eslint-plugin-react "^7.31.7"
     eslint-plugin-react-hooks "^4.5.0"
 
-eslint-config-prettier@8.6.0:
+eslint-config-prettier@^8.5.0:
   version "8.6.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.6.0.tgz#dec1d29ab728f4fa63061774e1672ac4e363d207"
   integrity sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==
@@ -6409,10 +6409,10 @@ react-overlays@^5.2.1:
     uncontrollable "^7.2.1"
     warning "^4.0.3"
 
-react-tooltip@^5.3.2:
-  version "5.3.2"
-  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-5.3.2.tgz#64593fb33ed1071e1d4dde89923906179abe98fe"
-  integrity sha512-3I6fGdNPCW/wF0doJ0qIT9DprUbXQ/qzBVH8c3GycBUoLmNMJFgDUWnqW1VV2fcz5uAdvX4cYEFl7nkc3Br7mA==
+react-tooltip@^5.3.4:
+  version "5.3.4"
+  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-5.3.4.tgz#7c295bca8b9038879f3015ef46524bcbd9df7849"
+  integrity sha512-iqzRINx6M50AvfoP4cWOl8BK8PLBpjyEATFr7MfJULKLM6cjaQQ46gsdaa25grDoD5ruxzuj+EWACNiAO1zNug==
   dependencies:
     "@floating-ui/dom" "^1.0.4"
     classnames "^2.3.2"
