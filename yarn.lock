@@ -6409,10 +6409,10 @@ react-overlays@^5.2.1:
     uncontrollable "^7.2.1"
     warning "^4.0.3"
 
-react-tooltip@^5.3.2:
-  version "5.3.2"
-  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-5.3.2.tgz#64593fb33ed1071e1d4dde89923906179abe98fe"
-  integrity sha512-3I6fGdNPCW/wF0doJ0qIT9DprUbXQ/qzBVH8c3GycBUoLmNMJFgDUWnqW1VV2fcz5uAdvX4cYEFl7nkc3Br7mA==
+react-tooltip@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/react-tooltip/-/react-tooltip-5.4.0.tgz#522fa9408812ec52c67e67222832519dfa089c12"
+  integrity sha512-bfUZUQ1im0TrO49yhG4qtYsx4WTPzF4TSELAgQfcOYuUfO7Ho09SdIU9LxzbBwhH55ZWgYhOpeCp9VKH6Cokdw==
   dependencies:
     "@floating-ui/dom" "^1.0.4"
     classnames "^2.3.2"
