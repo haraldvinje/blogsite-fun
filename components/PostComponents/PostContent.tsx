@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Timestamp } from 'firebase/firestore'
 import { Post } from 'lib/firebase/firestore'
@@ -14,8 +13,8 @@ export const PostContent = ({ post }: { post: Post }) => {
       <h1 className="pb-4 text-2xl font-bold">{post?.title}</h1>
       <span>
         Written by{' '}
-        <Link href={`/${post.username}`}>
-          <a className="text-blue">@{post.username}</a>
+        <Link href={`/${post.username}`} className="text-blue">
+          @{post.username}
         </Link>{' '}
         on {toDateTimeString(createdAt)}
       </span>

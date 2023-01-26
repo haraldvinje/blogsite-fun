@@ -10,7 +10,7 @@ const AnimationWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <div>
       <LazyMotion features={domAnimation}>
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence mode="wait">
           <m.div
             key={router.route.concat(animation.name)}
             initial="initial"

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Post } from 'lib/firebase/firestore'
 import { PostItem } from 'components/PostComponents/PostItem'
 

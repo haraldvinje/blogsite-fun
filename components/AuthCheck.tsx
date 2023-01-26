@@ -11,8 +11,8 @@ const AuthCheck = ({ children, fallback }: { children?: ReactNode; fallback?: Re
   ) : (
     <>
       {fallback || (
-        <Link href="/enter">
-          <a className="text-blue">You must be signed in</a>
+        <Link href="/enter" className="text-blue">
+          You must be signed in
         </Link>
       )}
     </>

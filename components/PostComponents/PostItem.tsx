@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 import { Post } from 'lib/firebase/firestore'
 
@@ -9,21 +8,17 @@ export const PostItem = ({ post, admin = false }: { post: Post; admin: boolean }
   const postUrl = admin ? `/admin/${post.slug}` : `/${post.username}/${post.slug}`
 
   return (
-    <Link href={postUrl} passHref>
+    <Link href={postUrl}>
       <div
         className="my-2 w-full rounded-md border border-gray bg-white p-4
                 duration-300 hover:scale-105"
       >
         <Link href={`/${post.username}`}>
-          <a>
-            <strong>By @{post.username}</strong>
-          </a>
+          <strong>By @{post.username}</strong>
         </Link>
 
         <Link href={postUrl} passHref>
-          <h1 className="my-2 text-lg font-bold">
-            <a className="hover:cursor-pointer">{post.title}</a>
-          </h1>
+          <h1 className="my-2 text-lg font-bold hover:cursor-pointer">{post.title}</h1>
         </Link>
 
         <footer className="flex w-full justify-between">

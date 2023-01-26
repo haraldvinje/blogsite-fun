@@ -1,4 +1,3 @@
-import React from 'react'
 import { increment, DocumentReference, doc, getFirestore, writeBatch } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 import { useDocument } from 'react-firebase-hooks/firestore'

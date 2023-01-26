@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useContext, useCallback, useEffect, useState } from 'react'
+import { useContext, useCallback, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { getFirestore, doc, getDoc, writeBatch } from 'firebase/firestore'
 import debounce from 'lodash.debounce'
