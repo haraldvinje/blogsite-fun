@@ -21,7 +21,7 @@
   "dependencies": {
     "@headlessui/react": "^1.5.0",
     "csstype": "^3.0.10",
-    "firebase": "^9.15.0",
+    "firebase": "^9.16.0",
     "framer-motion": "^8.5.0",
     "gsap": "^3.11.4",
     "image-url-validator": "^1.0.4",
