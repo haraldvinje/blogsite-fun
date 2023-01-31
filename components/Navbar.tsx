@@ -19,7 +19,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed top-0 flex h-20 w-screen border-b border-gray bg-white">
+    <nav className="fixed z-10 flex h-20 w-screen border-b border-gray bg-white">
       <div className="flex w-[100%] flex-wrap">
         <ul className="mx-[20%] flex h-[100%] w-[100%] items-center">
           <li className="flex h-[100%] items-center">
