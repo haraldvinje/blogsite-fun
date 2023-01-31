@@ -16,7 +16,6 @@ jobs:
         uses: dependabot/fetch-metadata@v1.3.5
         with:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
-          compat-lookup: true
       - name: Approve and rebase if conditions and checks are met
         if: ${{steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor'}}
         run: gh pr review --approve "$PR_URL" && gh pr merge --auto --rebase --delete-branch "$PR_URL"
