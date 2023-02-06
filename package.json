@@ -54,7 +54,7 @@
     "eslint-config-next": "13.1.6",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-next": "^0.0.0",
-    "eslint-plugin-tailwindcss": "^3.8.0",
+    "eslint-plugin-tailwindcss": "^3.8.3",
     "firebase-tools": "^11.21.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.3",
