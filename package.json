@@ -19,7 +19,7 @@
     "node": ">=16.0.0 <19.0.0"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.8",
+    "@headlessui/react": "^1.7.9",
     "csstype": "^3.0.10",
     "firebase": "^9.17.1",
     "framer-motion": "^8.5.4",
