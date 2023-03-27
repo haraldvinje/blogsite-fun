@@ -31,7 +31,7 @@
     "react-firebase-hooks": "^5.1.1",
     "react-hook-form": "^7.43.7",
     "react-hot-toast": "^2.4.0",
-    "react-markdown": "^8.0.5",
+    "react-markdown": "^8.0.6",
     "react-modal": "^3.16.1",
     "uuid": "^9.0.0"
   },
