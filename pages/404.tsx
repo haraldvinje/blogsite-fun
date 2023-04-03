@@ -12,8 +12,8 @@ const Custom404 = () => {
       ></iframe>
       <Link href="/" passHref>
         <button
-          className="my-4 rounded-md bg-blue py-4 
-                    px-10 text-[10px] font-extrabold text-white"
+          className="my-4 rounded-md bg-blue px-10
+                    py-4 text-[10px] font-extrabold text-white"
         >
           Go home
         </button>

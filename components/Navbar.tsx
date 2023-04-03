@@ -25,7 +25,7 @@ const Navbar = () => {
           <li className="flex h-[100%] items-center">
             <Link href="/" passHref>
               <button
-                className="rounded-md bg-black py-3 px-4
+                className="rounded-md bg-black px-4 py-3
                                     text-xl font-bold text-white hover:text-gray"
               >
                 FEED
@@ -60,7 +60,7 @@ const Navbar = () => {
                 <Link href="/admin" passHref>
                   <button
                     className="mx-2 rounded-md bg-blue p-2 text-[10px] font-extrabold
-                                        text-white hover:text-gray sm:py-4 sm:px-10 xl:px-4"
+                                        text-white hover:text-gray sm:px-10 sm:py-4 xl:px-4"
                   >
                     Write Posts
                   </button>
@@ -74,8 +74,8 @@ const Navbar = () => {
               <li>
                 <Link href="/enter" passHref>
                   <button
-                    className="rounded-md bg-blue py-4 
-                                            px-10 text-[10px] font-extrabold text-white hover:text-gray"
+                    className="rounded-md bg-blue px-10 
+                                            py-4 text-[10px] font-extrabold text-white hover:text-gray"
                   >
                     Log In
                   </button>

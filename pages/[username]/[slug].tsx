@@ -75,7 +75,7 @@ const Post = ({ post }: { post: Post }) => {
     <>
       <Metatags title={post.title} />
       <main className="flex flex-wrap">
-        <section className="mr-2 mb-4 w-[80%]">
+        <section className="mb-4 mr-2 w-[80%]">
           <PostContent post={postToShow} />
         </section>
         <section

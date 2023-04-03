@@ -13,7 +13,7 @@ const BaseLayout = ({ children }: { children: ReactNode }) => {
       <div className="min-h-screen w-[100%] overflow-hidden bg-light-gray">
         <Navbar />
         <AnimationWrapper>
-          <main className="my-20 py-[5%] px-[10%] xl:px-[20%]">{children}</main>
+          <main className="my-20 px-[10%] py-[5%] xl:px-[20%]">{children}</main>
         </AnimationWrapper>
         <Toaster />
       </div>

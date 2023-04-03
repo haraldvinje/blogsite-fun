@@ -86,7 +86,7 @@ function CreateNewPost() {
       <button
         type="submit"
         disabled={!isValid}
-        className={`my-2 rounded-md bg-light-green py-4 px-8 text-white
+        className={`my-2 rounded-md bg-light-green px-8 py-4 text-white
                     ${!isValid ? 'cursor-not-allowed bg-dark-green' : 'hover:bg-green'}`}
       >
         Create New Post
