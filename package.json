@@ -22,7 +22,7 @@
     "@headlessui/react": "^1.7.14",
     "csstype": "^3.1.2",
     "firebase": "^9.19.1",
-    "framer-motion": "^10.12.2",
+    "framer-motion": "^10.12.4",
     "lodash.debounce": "^4.0.8",
     "lodash.kebabcase": "^4.1.1",
     "next": "^13.3.0",
