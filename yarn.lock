@@ -2135,10 +2135,10 @@ csv-parse@^5.0.4:
   resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-5.3.3.tgz#3b75d2279e2edb550cbc54c65b25cbbf3d0033ad"
   integrity sha512-kEWkAPleNEdhFNkHQpFHu9RYPogsFj3dx6bCxL847fsiLgidzWg0z/O0B1kVWMJUc5ky64zGp18LX2T3DQrOfw==
 
-cypress@^12.15.0:
-  version "12.15.0"
-  resolved "https://registry.yarnpkg.com/cypress/-/cypress-12.15.0.tgz#06103529583c41f39712c6cfa6d9d09a01731760"
-  integrity sha512-FqGbxsH+QgjStuTO9onXMIeF44eOrgVwPvlcvuzLIaePQMkl72YgBvpuHlBGRcrw3Q4SvqKfajN8iV5XWShAiQ==
+cypress@^12.16.0:
+  version "12.16.0"
+  resolved "https://registry.yarnpkg.com/cypress/-/cypress-12.16.0.tgz#d0dcd0725a96497f4c60cf54742242259847924c"
+  integrity sha512-mwv1YNe48hm0LVaPgofEhGCtLwNIQEjmj2dJXnAkY1b4n/NE9OtgPph4TyS+tOtYp5CKtRmDvBzWseUXQTjbTg==
   dependencies:
     "@cypress/request" "^2.88.10"
     "@cypress/xvfb" "^1.2.4"
