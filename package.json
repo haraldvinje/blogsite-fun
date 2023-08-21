@@ -20,7 +20,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.16",
     "csstype": "^3.1.2",
-    "framer-motion": "^10.15.1",
+    "framer-motion": "^10.16.0",
     "firebase": "^10.1.0",
     "lodash.debounce": "^4.0.8",
     "lodash.kebabcase": "^4.1.1",
