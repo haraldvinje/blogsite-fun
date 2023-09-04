@@ -72,7 +72,7 @@ const Navbar = () => {
           {!username && (
             <>
               <li>
-                <Link href="/enter" passHref>
+                <Link href="/enter" passHref data-cy="log in">
                   <button
                     className="rounded-md bg-blue px-10 
                                             py-4 text-[10px] font-extrabold text-white hover:text-gray"

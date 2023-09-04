@@ -4,7 +4,7 @@ describe('Navigation', () => {
     cy.visit('http://localhost:3000/')
 
     // Find a link with an href attribute containing "enter" and click it
-    cy.get('button[href*="enter"]').click()
+    cy.get('[data-cy="log in"]').click()
 
     // The new url should include "/enter"
     cy.url().should('include', '/enter')
