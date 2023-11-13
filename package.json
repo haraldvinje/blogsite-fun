@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "@types/lodash.debounce": "^4.0.8",
+    "@types/lodash.debounce": "^4.0.9",
     "@types/lodash.kebabcase": "^4.1.9",
     "@types/react": "^18.2.37",
     "@types/react-modal": "^3.16.3",
