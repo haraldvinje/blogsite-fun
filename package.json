@@ -54,7 +54,7 @@
     "firebase-tools": "^12.9.1",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.10",
-    "react-tooltip": "^5.25.0",
+    "react-tooltip": "^5.25.1",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3"
   }
