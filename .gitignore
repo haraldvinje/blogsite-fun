@@ -30,6 +30,8 @@ yarn-error.log*
 firebase-debug.log*
 firestore-debug.log*
 ui-debug.log*
+public/index.html
+public/404.html
 .pnpm-debug.log*
 
 # local env files
