@@ -3384,10 +3384,10 @@ find-up@^5.0.0:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
 
-firebase-tools@^13.8.0:
-  version "13.8.0"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-13.8.0.tgz#3fa46fcef70ffb5441393a36793e7c7c2869fc8a"
-  integrity sha512-8fIQt87Uo6sN/4imCLNQCsmHzh1VXDu27mSGOUj4w+z5JQG/k40JHVwqOwW5LUsIlfDJgNOyf7Tu64x0iESHLA==
+firebase-tools@^13.8.3:
+  version "13.8.3"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-13.8.3.tgz#4f591b562ec9360f62c26edd7082e4f104a5b88a"
+  integrity sha512-cvZmJ/OS/igJenUPeQfAj83YEP1cyGv+h33McFW/b0CTryubbu75zlAYfqsJO/XVkFIXHvnhrFVudeoA5uABYw==
   dependencies:
     "@google-cloud/cloud-sql-connector" "^1.2.3"
     "@google-cloud/pubsub" "^3.0.1"
