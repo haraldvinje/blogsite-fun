@@ -67,7 +67,7 @@ export const PostManager = () => {
   }
 
   return (
-    <main className="w-[100%]">
+    <main className="w-full">
       {post && (
         <div className="flex">
           <Modal
@@ -100,13 +100,13 @@ export const PostManager = () => {
               <h3 className="text-[20px] font-semibold">Tools</h3>
               <button
                 onClick={() => setPreview(!preview)}
-                className="my-4 h-[50px] w-[80%] rounded-md bg-gray hover:bg-dark-gray"
+                className="my-4 h-[50px] w-4/5 rounded-md bg-gray hover:bg-dark-gray"
               >
                 {preview ? 'Edit' : 'Preview'}
               </button>
               <button
                 onClick={() => setShowDeleteModal(true)}
-                className="my-4 h-[50px] w-[80%]
+                className="my-4 h-[50px] w-4/5
                                     rounded-md bg-dark-red text-white hover:bg-red hover:font-bold"
               >
                 Delete

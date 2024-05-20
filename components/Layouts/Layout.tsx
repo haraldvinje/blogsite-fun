@@ -10,7 +10,7 @@ const BaseLayout = ({ children }: { children: ReactNode }) => {
       <Head>
         <title>Blog Site Fun 🎉</title>
       </Head>
-      <div className="min-h-screen w-[100%] overflow-hidden bg-light-gray">
+      <div className="min-h-screen w-full overflow-hidden bg-light-gray">
         <Navbar />
         <AnimationWrapper>
           <main className="my-20 px-[10%] py-[5%] xl:px-[20%]">{children}</main>

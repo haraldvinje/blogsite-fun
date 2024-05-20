@@ -20,9 +20,9 @@ const Navbar = () => {
 
   return (
     <nav className="fixed z-10 flex h-20 w-screen border-b border-gray bg-white">
-      <div className="flex w-[100%] flex-wrap">
-        <ul className="mx-[20%] flex h-[100%] w-[100%] items-center">
-          <li className="flex h-[100%] items-center">
+      <div className="flex w-full flex-wrap">
+        <ul className="mx-[20%] flex size-full items-center">
+          <li className="flex h-full items-center">
             <Link href="/" passHref>
               <button
                 className="rounded-md bg-black px-4 py-3
@@ -34,8 +34,8 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="flex w-[100%] flex-wrap">
-        <ul className="mx-[20%] flex h-[100%] w-[100%] flex-row-reverse items-center">
+      <div className="flex w-full flex-wrap">
+        <ul className="mx-[20%] flex size-full flex-row-reverse items-center">
           {username && (
             <>
               <li className="flex items-center">
@@ -43,7 +43,7 @@ const Navbar = () => {
                   head={
                     <img
                       src={user?.photoURL || '/hacker.png'}
-                      className="h-[50px] w-[50px] rounded-full"
+                      className="size-[50px] rounded-full"
                       alt="Pic"
                     />
                   }

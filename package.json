@@ -11,7 +11,8 @@
     "lint": "next lint && prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "clean": "rm -rf node_modules && rm -rf .next",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:test": "cypress run"
   },
   "packageManager": "yarn@1.22.19",
   "dependencies": {
@@ -56,6 +57,7 @@
     "typescript": "^5.4.5"
   },
   "resolutions": {
-    "protobufjs": "7.3.0"
+    "protobufjs": "7.3.0",
+    "google-gax": "4.3.3"
   }
 }

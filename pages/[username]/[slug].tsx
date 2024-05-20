@@ -10,7 +10,8 @@ import {
   collection
 } from 'firebase/firestore'
 import { isEmpty } from 'lib/utils'
-import { getUserWithUsername, Post, postToJSON } from 'lib/firebase/firestore'
+import { getUserWithUsername, postToJSON } from 'lib/firebase/firestore'
+import type { Post } from 'lib/firebase/firestore'
 import { useDocumentData } from 'react-firebase-hooks/firestore'
 import { PostContent } from 'components/PostComponents/PostContent'
 import AuthCheck from 'components/AuthCheck'
@@ -75,7 +76,7 @@ const Post = ({ post }: { post: Post }) => {
     <>
       <Metatags title={post.title} />
       <main className="flex flex-wrap">
-        <section className="mb-4 mr-2 w-[80%]">
+        <section className="mb-4 mr-2 w-4/5">
           <PostContent post={postToShow} />
         </section>
         <section

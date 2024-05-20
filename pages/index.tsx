@@ -70,7 +70,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
 
   return (
     <div className="flex pt-16">
-      <div className="w-[100%] flex-col justify-center">
+      <div className="w-full flex-col justify-center">
         <PostFeed posts={visiblePosts} admin={false} />
         <div className="mt-4 text-center">
           {!loading && !postsEnd && (
