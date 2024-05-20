@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('Navigation', () => {
   it('should navigate to the Sign In page', () => {
     // Start from the index page

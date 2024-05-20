@@ -105,7 +105,7 @@ function UsernameForm() {
             placeholder="username"
             value={formValue}
             onChange={onChange}
-            className="mb-2 w-[100%] px-2"
+            className="mb-2 w-full px-2"
           />
 
           <UsernameMessage username={formValue} isValid={isValid} loading={loading} />
