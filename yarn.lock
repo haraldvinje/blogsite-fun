@@ -3464,10 +3464,10 @@ find-up@^5.0.0:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
 
-firebase-tools@^13.10.1:
-  version "13.10.1"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-13.10.1.tgz#355813da95598982d4dd89d4465c120c302ae1b8"
-  integrity sha512-5UHbhCZbhGWi91gVEhmQTqv9LQUlcmAMtLof6SPVYz4ur+iLpW21TclTURUvneO+uR40bVmYLUoV9kyGmTWy5g==
+firebase-tools@^13.10.2:
+  version "13.10.2"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-13.10.2.tgz#ae0bbe075008a2e1d1e2966bf66dcae8b36d7085"
+  integrity sha512-vdD2//pncVg0jf2Wxo4jNJVxOiS4yJE7lx60H0xONkVW4P+hg4xe7y0O+RxOzajw4hbrUq4geyRZDQK1VlIKuw==
   dependencies:
     "@google-cloud/cloud-sql-connector" "^1.2.3"
     "@google-cloud/pubsub" "^4.4.0"
@@ -3644,10 +3644,10 @@ fraction.js@^4.3.7:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.3.7.tgz#06ca0085157e42fda7f9e726e79fefc4068840f7"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
-framer-motion@^11.2.6:
-  version "11.2.6"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.2.6.tgz#ab693b24d1f6cf34ef83494ab2df59fd39b7c87e"
-  integrity sha512-XUrjjBt57e5YoHQtjwc3eNchFBuHvIgN/cS8SC4oIaAn2J/0+bLanUxXizidJKZVeHJam/JrmMnPRjYMglVn5g==
+framer-motion@^11.2.10:
+  version "11.2.10"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.2.10.tgz#c8671e33e8f8d4abbd95efd20d3b8a888f457ed7"
+  integrity sha512-/gr3PLZUVFCc86a9MqCUboVrALscrdluzTb3yew+2/qKBU8CX6nzs918/SRBRCqaPbx0TZP10CB6yFgK2C5cYQ==
   dependencies:
     tslib "^2.4.0"
 
@@ -6278,15 +6278,15 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prettier-plugin-tailwindcss@^0.5.14:
-  version "0.5.14"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.5.14.tgz#4482eed357d5e22eac259541c70aca5a4c7b9d5c"
-  integrity sha512-Puaz+wPUAhFp8Lo9HuciYKM2Y2XExESjeT+9NQoVFXZsPPnc9VYss2SpxdQ6vbatmt8/4+SN0oe0I1cPDABg9Q==
+prettier-plugin-tailwindcss@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.6.1.tgz#6cb1f5f3e1a8d8b5ea3f97d19be516d9ce9931bf"
+  integrity sha512-AnbeYZu0WGj+QgKciUgdMnRxrqcxltleZPgdwfA5104BHM3siBLONN/HLW1yS2HvzSNkzpQ/JAj+LN0jcJO+0w==
 
-prettier@^3.2.5:
-  version "3.2.5"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.2.5.tgz#e52bc3090586e824964a8813b09aba6233b28368"
-  integrity sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==
+prettier@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.3.0.tgz#d173ea0524a691d4c0b1181752f2b46724328cdf"
+  integrity sha512-J9odKxERhCQ10OC2yb93583f6UnYutOeiV5i0zEDS7UGTdUt0u+y8erxl3lBKvwo/JHyyoEdXjwp4dke9oyZ/g==
 
 pretty-bytes@^5.6.0:
   version "5.6.0"
