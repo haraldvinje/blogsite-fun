@@ -55,9 +55,5 @@
     "react-tooltip": "^5.28.0",
     "typescript": "^5.5.4",
     "tailwindcss": "^3.4.7"
-  },
-  "resolutions": {
-    "protobufjs": "7.3.0",
-    "google-gax": "4.3.3"
   }
 }
