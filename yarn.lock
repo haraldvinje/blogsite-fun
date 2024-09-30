@@ -68,6 +68,11 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
+"@electric-sql/pglite@^0.2.0":
+  version "0.2.9"
+  resolved "https://registry.yarnpkg.com/@electric-sql/pglite/-/pglite-0.2.9.tgz#a76742cd3eee103b88d20539c205b8d149765920"
+  integrity sha512-KPItmBmPVZJGOv+qkCXmWyIPUPLQIyN+BVtV/zD+083aWSR/2ReaCUN+HJv6Jw4z9zJ00UCPQkeUXvOLuTlumg==
+
 "@eslint-community/eslint-utils@^4.2.0", "@eslint-community/eslint-utils@^4.4.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz#a23514e8fb9af1269d5f7788aa556798d61c6b59"
@@ -3526,11 +3531,12 @@ find-up@^5.0.0:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
 
-firebase-tools@^13.18.0:
-  version "13.18.0"
-  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-13.18.0.tgz#5cf32cba309570915fbffc9b2e03d3ee0c55b916"
-  integrity sha512-HackYCHIDqGddGCua79jEOL0ZtMr9LOsk99KIzymX8UET7BeFDwFs7zNgJSFxFErqBKWw2Y1zAj7OuE8+EOkIw==
+firebase-tools@^13.20.1:
+  version "13.20.1"
+  resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-13.20.1.tgz#764163adbe36fbcc25affbef6b33c2b191965349"
+  integrity sha512-P4g71LkFiDzxoMvUqjsF6MWVTpKQ7g0Rcfj9hQQesM4w2FeNAImirAf55mzXewIEYQLTeWwRQm552Jg8r4MkNA==
   dependencies:
+    "@electric-sql/pglite" "^0.2.0"
     "@google-cloud/cloud-sql-connector" "^1.3.3"
     "@google-cloud/pubsub" "^4.5.0"
     abort-controller "^3.0.0"
@@ -3565,6 +3571,7 @@ firebase-tools@^13.18.0:
     leven "^3.1.0"
     libsodium-wrappers "^0.7.10"
     lodash "^4.17.21"
+    lsofi "1.0.0"
     marked "^13.0.2"
     marked-terminal "^7.0.0"
     mime "^2.5.2"
@@ -4421,6 +4428,11 @@ is-boolean-object@^1.1.0:
     call-bind "^1.0.2"
     has-tostringtag "^1.0.0"
 
+is-buffer@^1.1.5:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
+  integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
+
 is-callable@^1.1.3, is-callable@^1.1.4, is-callable@^1.2.7:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.2.7.tgz#3bc2a85ea742d9e36205dcacdd72ca1fdc51b055"
@@ -4541,6 +4553,13 @@ is-number-object@^1.0.4:
   integrity sha512-k1U0IRzLMo7ZlYIfzRu23Oh6MiIFasgpb9X76eqfFZAqwH44UI4KTBvBYIZ1dSL9ZzChTB9ShHfLkR4pdW5krQ==
   dependencies:
     has-tostringtag "^1.0.0"
+
+is-number@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/is-number/-/is-number-2.1.0.tgz#01fcbbb393463a548f2f466cce16dece49db908f"
+  integrity sha512-QUzH43Gfb9+5yckcrSA0VBDwEtDUchrk4F6tfJZQuNzDJbEDB9cZNzSfXGQ1jqmdDY/kl41lUOWM9syA8z8jlg==
+  dependencies:
+    kind-of "^3.0.2"
 
 is-number@^7.0.0:
   version "7.0.0"
@@ -4917,6 +4936,13 @@ keyv@^4.5.3:
   dependencies:
     json-buffer "3.0.1"
 
+kind-of@^3.0.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
+  integrity sha512-NOW9QQXMoZGg/oqnVNoNTTIFEIid1627WCffUBJEdMxYApq7mNE7CpzucIPc+ZQg25Phej7IJSmX3hO+oblOtQ==
+  dependencies:
+    is-buffer "^1.1.5"
+
 kuler@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/kuler/-/kuler-2.0.0.tgz#e2c570a3800388fb44407e851531c1d670b061b3"
@@ -5150,6 +5176,14 @@ lru-cache@^7.14.1:
   version "7.18.3"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.18.3.tgz#f793896e0fd0e954a59dfdd82f0773808df6aa89"
   integrity sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==
+
+lsofi@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/lsofi/-/lsofi-1.0.0.tgz#ed65a9d1d811b835b8c51b61762cefa64eb96a8d"
+  integrity sha512-MKr9vM1MSm+TSKfI05IYxpKV1NCxpJaBLnELyIf784zYJ5KV9lGCE1EvpA2DtXDNM3fCuFeCwXUzim/fyQRi+A==
+  dependencies:
+    is-number "^2.1.0"
+    through2 "^2.0.1"
 
 make-dir@^3.0.0:
   version "3.1.0"
@@ -6675,7 +6709,7 @@ read-cache@^1.0.0:
   dependencies:
     pify "^2.3.0"
 
-readable-stream@^2.0.5:
+readable-stream@^2.0.5, readable-stream@~2.3.6:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.8.tgz#91125e8042bba1b9887f49345f6277027ce8be9b"
   integrity sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA==
@@ -7621,6 +7655,14 @@ throttleit@^1.0.0:
   resolved "https://registry.yarnpkg.com/throttleit/-/throttleit-1.0.1.tgz#304ec51631c3b770c65c6c6f76938b384000f4d5"
   integrity sha512-vDZpf9Chs9mAdfY046mcPt8fg5QSZr37hEH4TXYBnDF+izxgrbRGUAAaBvIk/fJm9aOFCGFd1EsNg5AZCbnQCQ==
 
+through2@^2.0.1:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.5.tgz#01c1e39eb31d07cb7d03a96a70823260b23132cd"
+  integrity sha512-/mrRod8xqpA+IHSLyGCQ2s8SPHiCDEeQJSep1jqLYeEUClOFG2Qsh+4FU6G9VeqpZnGW/Su8LQGc4YKni5rYSQ==
+  dependencies:
+    readable-stream "~2.3.6"
+    xtend "~4.0.1"
+
 through@^2.3.6, through@^2.3.8:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
@@ -8282,7 +8324,7 @@ xdg-basedir@^4.0.0:
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-4.0.0.tgz#4bc8d9984403696225ef83a1573cbbcb4e79db13"
   integrity sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q==
 
-xtend@^4.0.0:
+xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
