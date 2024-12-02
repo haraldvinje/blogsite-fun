@@ -50,7 +50,7 @@
     "eslint-plugin-tailwindcss": "^3.17.5",
     "firebase-tools": "^13.27.0",
     "postcss": "^8.4.48",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "react-tooltip": "^5.28.0",
     "typescript": "^5.7.2",
