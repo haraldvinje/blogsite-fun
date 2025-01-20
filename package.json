@@ -49,7 +49,7 @@
     "eslint-plugin-next": "^0.0.0",
     "eslint-plugin-tailwindcss": "^3.17.5",
     "firebase-tools": "^13.29.1",
-    "postcss": "^8.4.48",
+    "postcss": "^8.5.1",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "react-tooltip": "^5.28.0",
