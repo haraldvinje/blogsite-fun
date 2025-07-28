@@ -22,7 +22,7 @@
     "framer-motion": "^12.23.6",
     "lodash.debounce": "^4.0.8",
     "lodash.kebabcase": "^4.1.1",
-    "next": "^15.4.2",
+    "next": "^15.4.4",
     "react": "19.1.0",
     "react-dom": "^19.1.0",
     "react-firebase-hooks": "^5.1.1",
