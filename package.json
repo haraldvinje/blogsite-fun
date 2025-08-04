@@ -44,7 +44,7 @@
     "autoprefixer": "^10.4.21",
     "cypress": "^14.5.3",
     "eslint": "8.57.1",
-    "eslint-config-next": "15.4.4",
+    "eslint-config-next": "15.4.5",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-next": "^0.0.0",
     "eslint-plugin-tailwindcss": "^3.18.2",
