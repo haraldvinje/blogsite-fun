@@ -33,7 +33,7 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.18",
+    "@tailwindcss/typography": "^0.5.19",
     "@types/lodash.debounce": "^4.0.9",
     "@types/lodash.kebabcase": "^4.1.9",
     "@types/react": "^19.1.13",
