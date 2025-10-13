@@ -36,7 +36,7 @@
     "@tailwindcss/typography": "^0.5.19",
     "@types/lodash.debounce": "^4.0.9",
     "@types/lodash.kebabcase": "^4.1.9",
-    "@types/react": "^19.2.0",
+    "@types/react": "^19.2.2",
     "@types/react-modal": "^3.16.3",
     "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
