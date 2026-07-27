@@ -7750,10 +7750,10 @@ react-firebase-hooks@^5.1.1:
   resolved "https://registry.yarnpkg.com/react-firebase-hooks/-/react-firebase-hooks-5.1.1.tgz#fc92bb4b860c6753c806583f64d7f069b6ee6785"
   integrity sha512-y2UpWs82xs+39q5Rc/wq316ca52QsC0n8m801V+yM4IC4hbfOL4yQPVSh7w+ydstdvjN9F+lvs1WrO2VYxpmdA==
 
-react-hook-form@^7.82.0:
-  version "7.82.0"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.82.0.tgz#9e8d504fe99ddd5a26a1d858bb6a03de45abff3e"
-  integrity sha512-Zw/uFZ2dO+02GHlBn7JFGn8kZJ7LdM33B/0BXOovzFay+CMhf94JMw5BVu+F1tVkUKjNvBuaE3fz5BJhga10Tg==
+react-hook-form@^7.83.0:
+  version "7.83.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.83.0.tgz#b4d43c42108645c2ae4d425ada2818d03522e8a9"
+  integrity sha512-AXt8cMCmx5a7u4uvpb2uRFVrWQhllI4pV+LSykxIac/hjt44TnQkmX9BKuQi2i+LDC62esmiLpilkav+kjVf/A==
 
 react-hot-toast@^2.6.0:
   version "2.6.0"
